@@ -1,0 +1,21 @@
+---
+import Card from '../Card.astro'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-6" title={t('about.title')}>
+  <div class="flex flex-col gap-2">
+    <p class="text-sm font-light">
+      <br />
+      {t('about.description')}
+      <br />
+      <br />
+    </p>
+    <p class="text-sm font-light">
+      {t('about.hobbies')}
+    </p>
+  </div>
+</Card>

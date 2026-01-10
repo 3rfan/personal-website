@@ -1,0 +1,30 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+import HeadSEO from '../components/HeadSEO.astro'
+import BackgroundGradient from '../components/BackgroundGradient.astro'
+import { getLangFromUrl } from '../i18n/utils'
+
+interface Props {
+  title?: string | undefined
+  description?: string | undefined
+  ogImage?: URL | undefined
+}
+
+const { title, description, ogImage } = Astro.props
+const lang = getLangFromUrl(Astro.url)
+---
+
+<html lang={lang}>
+  <head>
+    <HeadSEO title={title} description={description} ogImage={ogImage} />
+    <ViewTransitions />
+  </head>
+  <body class="min-h-screen font-sans antialiased">
+    <BackgroundGradient />
+    <div class="relative flex min-h-screen flex-col py-12">
+      <main class="flex-1">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+---
+import ProjectCard from '../../components/ProjectCard.astro'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import Container from '../../components/Container.astro'
+import { contentfulClient } from '../../lib/contentful'
+import type { EntryFieldTypes } from 'contentful'
+
+interface Project {
+  contentTypeId: 'Projects'
+  fields: {
+    name: EntryFieldTypes.Text
+    img: EntryFieldTypes.AssetLink
+    website: EntryFieldTypes.EntryResourceLink<any>
+    repositorio: EntryFieldTypes.EntryResourceLink<any>
+  }
+}
+
+let entries = { items: [] }
+if (contentfulClient) {
+  try {
+    entries = await contentfulClient.getEntries<Project>({})
+  } catch (error) {
+    console.error('Error fetching Contentful entries:', error)
+    // Continue with empty entries to prevent app from crashing
+  }
+}
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<BaseLayout
+  title={t('portfolio.title')}
+  description={t('portfolio.description')}
+>
+  <main class="flex min-h-[80vh] flex-auto flex-col py-12" transition:animate="slide">
+    <Container size="md">
+      <h2
+        class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0"
+      >
+        {t('portfolio.heading')}
+      </h2>
+    </Container>
+    <div class="py-8">
+      <Container size="xl">
+        <div class="flex w-full flex-wrap justify-center gap-2">
+          {
+            entries.items.map((entry: any) => (
+              <ProjectCard
+                key={entry?.sys?.id}
+                href={entry?.fields?.website}
+                heading={entry?.fields?.name}
+                subheading={entry?.fields?.description}
+                imagePath={entry?.fields?.img?.fields?.file.url}
+                altText={entry?.fields?.img?.fields.title}
+                class="w-full sm:w-2/5"
+              />
+            ))
+          }
+        </div>
+      </Container>
+    </div>
+  </main>
+</BaseLayout>
