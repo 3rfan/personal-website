@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
+import { ClientRouter } from 'astro:transitions'
 import HeadSEO from '../components/HeadSEO.astro'
 import BackgroundGradient from '../components/BackgroundGradient.astro'
 import { getLangFromUrl } from '../i18n/utils'
@@ -17,7 +17,7 @@ const lang = getLangFromUrl(Astro.url)
 <html lang={lang}>
   <head>
     <HeadSEO title={title} description={description} ogImage={ogImage} />
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="min-h-screen font-sans antialiased">
     <BackgroundGradient />
