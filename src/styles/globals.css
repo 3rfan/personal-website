@@ -57,3 +57,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.card-animate {
+  opacity: 0;
+}
