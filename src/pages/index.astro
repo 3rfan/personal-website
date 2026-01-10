@@ -37,63 +37,40 @@ const navigationTranslations = {
 ---
 
 <script>
-  import { animate } from 'motion'
-  import { loaderAnimation } from '../lib/constants'
+  import { animate, stagger } from 'motion'
 
-  let animationRunning = false
-  let animationTimeout: ReturnType<typeof setTimeout> | null = null
-
-  // Wait for ViewTransitions to complete before animating
   function initAnimations() {
-    // Prevent multiple simultaneous animations
-    if (animationRunning) return
-
+    const loader = document.querySelector('.loader')
     const cards = document.querySelectorAll('.card-animate')
-    if (cards.length === 0) return
 
-    // Clear any pending animation
-    if (animationTimeout) {
-      clearTimeout(animationTimeout)
-      animationTimeout = null
+    if (loader) {
+      animate(
+        loader,
+        { opacity: [1, 0], pointerEvents: 'none' },
+        { duration: 0.3, easing: 'ease-out' }
+      ).finished.then(() => {
+        animateCards(cards)
+      })
+    } else {
+      animateCards(cards)
     }
+  }
 
-    animationRunning = true
-
-    const sequence = [
-      loaderAnimation,
-      [
+  function animateCards(cards: NodeListOf<Element>) {
+    if (cards.length > 0) {
+      animate(
         cards,
         { y: ['40%', '0%'], opacity: [0, 1] },
         {
-          at: '-0.1',
           duration: 0.4,
-          delay: { easing: 'ease-out', from: 0, step: 0.3 },
-        },
-      ],
-    ]
-
-    animate.timeline(sequence).finished.then(() => {
-      animationRunning = false
-    })
+          delay: stagger(0.3),
+          easing: 'ease-out',
+        }
+      )
+    }
   }
 
-  // Handle ViewTransitions
-  document.addEventListener('astro:after-swap', () => {
-    // Wait for ViewTransition to complete and DOM to be ready
-    animationTimeout = setTimeout(() => {
-      initAnimations()
-    }, 150)
-  })
-
-  // Initial load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(initAnimations, 100)
-    })
-  } else {
-    // DOM already loaded
-    setTimeout(initAnimations, 100)
-  }
+  document.addEventListener('astro:page-load', initAnimations)
 </script>
 
 <BaseLayout title={t('home.title')} description={t('home.description')}>
