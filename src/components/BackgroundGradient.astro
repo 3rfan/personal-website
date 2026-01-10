@@ -1,218 +1,218 @@
-<canvas id="background-canvas" class="fixed inset-0 -z-10 h-full w-full"
-></canvas>
+<canvas id="ascii-canvas" class="fixed inset-0 -z-10 h-full w-full"></canvas>
 
 <script>
-  const canvas = document.getElementById(
-    'background-canvas',
-  ) as HTMLCanvasElement
-  const ctx = canvas.getContext('2d')
 
-  let particles: Particle[] = []
+  // CONFIGURATION
+  const CONFIG = {
+    // Grid settings
+    cellSize: 30,                // Space between characters (20-50)
+    
+    // Character appearance
+    fontSize: 12,                // Size of characters (10-16)
+    opacity: 0.4,                // Base opacity (0.2-0.6)
+    
+    // Character set (what appears on screen)
+    characters: ['0', '1', '·', '∙', '○', '◦','3'],  // Available characters
+    
+    // Animation
+    flickerSpeed: 0.01,          // How often chars randomly change (0-0.1, lower = less)
+    mouseRadius: 120,            // Distance mouse affects characters
+    mouseIntensity: 0.3,         // How much mouse changes opacity (0-1)
+    
+    // Density
+    density: 0.6,                // How many cells have characters (0-1)
+    
+    // Colors
+    useThemeColors: true,        // Use your theme's primary color
+    customColor: '180, 70%, 60%',  // HSL color if useThemeColors = false (comma-separated for canvas)
+  }
+  // ============================
+
+  let canvas: HTMLCanvasElement | null = null
+  let ctx: CanvasRenderingContext2D | null = null
+
+  let grid: Cell[] = []
+  let mouse = { x: -1000, y: -1000 }
+  let color = '180, 70%, 60%'
   let animationId: number
-  let mouse = { x: -1000, y: -1000, isActive: false }
-  let idleTimer: number
+  let observer: MutationObserver | null = null
+  let mouseMoveHandler: ((e: MouseEvent) => void) | null = null
+  let mouseLeaveHandler: (() => void) | null = null
 
-  // Colors will be fetched from CSS variables
-  // primary: Orange (usually)
-  // foreground: Black in light mode, White in dark mode
-  const colors = {
-    primary: '0 0% 100%',
-    foreground: '0 0% 100%',
+  function updateColor() {
+    const isDark = document.documentElement.classList.contains('dark')
+    
+    if (CONFIG.useThemeColors) {
+      // Black in light mode, greenish in dark mode
+      // Canvas requires comma-separated HSL format
+      color = isDark ? '150, 60%, 50%' : '0, 0%, 0%'
+    } else {
+      color = CONFIG.customColor
+    }
   }
 
-  function updateColors() {
-    const style = getComputedStyle(document.documentElement)
-    const getVar = (name: string) => style.getPropertyValue(name).trim()
-
-    colors.primary = getVar('--primary')
-    colors.foreground = getVar('--foreground')
-
-    particles.forEach((p) => p.updateColor())
-  }
-
-  type ShapeType = 'blade' | 'triangle' | 'cross' | 'circle'
-
-  class Particle {
+  class Cell {
     x: number
     y: number
-    size: number
-    length: number
-    speedX: number
-    speedY: number
-    angle: number
-    swing: number
-    swingSpeed: number
-    color: string
-    colorType: 'primary' | 'foreground'
-    shape: ShapeType
-    rotation: number
-    rotationSpeed: number
+    char: string
+    baseOpacity: number
+    flickerTimer: number
 
-    constructor() {
-      this.x = Math.random() * canvas.width
-      this.y = Math.random() * canvas.height
-
-      // Dimensions
-      this.size = Math.random() * 3 + 1
-      this.length = Math.random() * 10 + 5
-
-      // Physics
-      this.speedY = Math.random() * 1 + 0.5
-      this.speedX = 0
-
-      this.angle = Math.random() * 360
-      this.swing = Math.random() * 1.5 + 0.5
-      this.swingSpeed = Math.random() * 0.05 + 0.01
-
-      this.rotation = Math.random() * 360
-      this.rotationSpeed = (Math.random() - 0.5) * 0.05
-
-      // Shape: Always Cross
-      this.shape = 'cross'
-
-      // Random Color
-      // 30% Primary (Orange), 70% Foreground (Black/White) for minimalist feel
-      const colorRand = Math.random()
-      if (colorRand < 0.3) {
-        this.colorType = 'primary'
-      } else {
-        this.colorType = 'foreground'
-      }
-      this.updateColor()
+    constructor(x: number, y: number) {
+      this.x = x
+      this.y = y
+      this.char = this.randomChar()
+      this.baseOpacity = CONFIG.opacity * (0.5 + Math.random() * 0.5)
+      this.flickerTimer = Math.random()
     }
 
-    updateColor() {
-      let val = ''
-      if (this.colorType === 'primary') val = colors.primary
-      else val = colors.foreground
-
-      // Fallback
-      if (!val) val = '0 0% 100%'
-
-      this.color = `hsl(${val})`
+    randomChar(): string {
+      return CONFIG.characters[Math.floor(Math.random() * CONFIG.characters.length)]
     }
 
     update() {
-      this.y += this.speedY
-      this.angle += this.swingSpeed
-      this.x += Math.cos(this.angle) * this.swing
-      this.rotation += this.rotationSpeed
-
-      if (mouse.isActive) {
-        let dx = mouse.x - this.x
-        let dy = mouse.y - this.y
-        let distance = Math.sqrt(dx * dx + dy * dy)
-        if (distance < 150) {
-          const force = (150 - distance) / 150
-          const angle = Math.atan2(dy, dx)
-          this.x -= Math.cos(angle) * force * 5
-          this.y -= Math.sin(angle) * force * 5
+      // Random flickering - occasionally change character
+      this.flickerTimer += CONFIG.flickerSpeed
+      if (this.flickerTimer > 1) {
+        this.flickerTimer = 0
+        if (Math.random() < 0.1) {  // 10% chance to change
+          this.char = this.randomChar()
         }
       }
-
-      if (this.y > canvas.height + 20) {
-        this.y = -20
-        this.x = Math.random() * canvas.width
-      }
-      if (this.x > canvas.width + 20) this.x = -20
-      if (this.x < -20) this.x = canvas.width + 20
     }
 
     draw() {
       if (!ctx) return
-      ctx.fillStyle = this.color
 
-      ctx.save()
-      ctx.translate(this.x, this.y)
-      ctx.rotate(this.rotation)
-      ctx.beginPath()
+      // Calculate distance to mouse
+      const dx = this.x - mouse.x
+      const dy = this.y - mouse.y
+      const distance = Math.sqrt(dx * dx + dy * dy)
 
-      if (this.shape === 'blade') {
-        ctx.ellipse(0, 0, this.size, this.length, 0, 0, Math.PI * 2)
-      } else if (this.shape === 'circle') {
-        ctx.arc(0, 0, this.size, 0, Math.PI * 2)
-      } else if (this.shape === 'triangle') {
-        const s = this.size * 2
-        ctx.moveTo(0, -s)
-        ctx.lineTo(s, s)
-        ctx.lineTo(-s, s)
-        ctx.closePath()
-      } else if (this.shape === 'cross') {
-        const w = this.size
-        const l = this.length * 0.6
-        ctx.rect(-w / 2, -l / 2, w, l)
-        ctx.rect(-l / 2, -w / 2, l, w)
+      // Opacity changes based on mouse proximity
+      let opacity = this.baseOpacity
+      if (distance < CONFIG.mouseRadius) {
+        const influence = 1 - (distance / CONFIG.mouseRadius)
+        opacity += influence * CONFIG.mouseIntensity
+        opacity = Math.min(opacity, 1)
       }
 
-      ctx.fill()
-      ctx.restore()
+      ctx.fillStyle = `hsla(${color}, ${opacity})`
+      ctx.fillText(this.char, this.x, this.y)
     }
   }
 
-  function init() {
+  function createGrid() {
     if (!canvas) return
-    updateColors()
-    resize()
+    grid = []
+    
+    const cols = Math.ceil(canvas.width / CONFIG.cellSize)
+    const rows = Math.ceil(canvas.height / CONFIG.cellSize)
 
-    window.addEventListener('mousemove', (e) => {
-      mouse.x = e.x
-      mouse.y = e.y
-      mouse.isActive = true
-      clearTimeout(idleTimer)
-      idleTimer = window.setTimeout(() => {
-        mouse.isActive = false
-      }, 2000)
-    })
-
-    window.addEventListener('mouseleave', () => {
-      mouse.isActive = false
-    })
-
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (
-          mutation.type === 'attributes' &&
-          mutation.attributeName === 'class'
-        ) {
-          updateColors()
+    for (let i = 0; i < cols; i++) {
+      for (let j = 0; j < rows; j++) {
+        // Only create cell based on density setting
+        if (Math.random() < CONFIG.density) {
+          const x = i * CONFIG.cellSize + CONFIG.cellSize / 2
+          const y = j * CONFIG.cellSize + CONFIG.cellSize / 2
+          grid.push(new Cell(x, y))
         }
-      })
-    })
-    observer.observe(document.documentElement, { attributes: true })
-
-    animate()
-  }
-
-  function createParticles() {
-    particles = []
-    // Minimalist density
-    const numberOfParticles = Math.floor((canvas.width * canvas.height) / 15000)
-    for (let i = 0; i < numberOfParticles; i++) {
-      particles.push(new Particle())
+      }
     }
   }
 
   function animate() {
-    if (!ctx) return
+    if (!ctx || !canvas) return
+
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    for (let i = 0; i < particles.length; i++) {
-      particles[i].update()
-      particles[i].draw()
-    }
+
+    grid.forEach(cell => {
+      cell.update()
+      cell.draw()
+    })
+
     animationId = requestAnimationFrame(animate)
   }
 
+  function cleanup() {
+    // Stop animation
+    if (animationId) {
+      cancelAnimationFrame(animationId)
+    }
+    
+    // Remove event listeners
+    if (mouseMoveHandler) {
+      window.removeEventListener('mousemove', mouseMoveHandler)
+    }
+    if (mouseLeaveHandler) {
+      window.removeEventListener('mouseleave', mouseLeaveHandler)
+    }
+    window.removeEventListener('resize', resize)
+    
+    // Disconnect observer
+    if (observer) {
+      observer.disconnect()
+      observer = null
+    }
+    
+    // Clear grid
+    grid = []
+    
+    // Clear context to allow GC
+    canvas = null
+    ctx = null
+  }
+
   function resize() {
+    if (!canvas || !ctx) return
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
-    createParticles()
+    
+    if (ctx) {
+      ctx.font = `${CONFIG.fontSize}px monospace`
+      ctx.textAlign = 'center'
+      ctx.textBaseline = 'middle'
+    }
+    
+    createGrid()
   }
 
-  window.addEventListener('resize', resize)
+  function init() {
+    // Clean up any existing instances first
+    cleanup()
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init)
-  } else {
-    init()
+    canvas = document.getElementById('ascii-canvas') as HTMLCanvasElement
+    if (!canvas) return
+    ctx = canvas.getContext('2d')
+
+    updateColor()
+    resize()
+
+    // Mouse tracking (store references for cleanup)
+    mouseMoveHandler = (e: MouseEvent) => {
+      mouse.x = e.clientX
+      mouse.y = e.clientY
+    }
+    mouseLeaveHandler = () => {
+      mouse.x = -1000
+      mouse.y = -1000
+    }
+    
+    window.addEventListener('mousemove', mouseMoveHandler)
+    window.addEventListener('mouseleave', mouseLeaveHandler)
+    window.addEventListener('resize', resize)
+
+    // Theme change observer
+    observer = new MutationObserver(() => updateColor())
+    observer.observe(document.documentElement, { 
+      attributes: true, 
+      attributeFilter: ['class'] 
+    })
+
+    animate()
   }
+
+
+  document.addEventListener('astro:page-load', init)
+  document.addEventListener('astro:before-preparation', cleanup)
 </script>
