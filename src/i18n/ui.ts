@@ -123,25 +123,25 @@ export const ui = {
     'nav.contact': 'Contact',
 
     // Intro Card
-    'intro.welcome': 'welkom',
+    'intro.welcome': 'Welkom!',
     'intro.title':
-      "Hoi, ik ben <b>Andrés Camilo Plaza</b>, een softwareontwikkelaar, systeemingenieur en tattoo artiest met een sterke focus op gebruikerservaring, animaties en micro-interacties. Ik hou ervan om mooie en functionele interfaces te maken, ik ben gepassioneerd over technologie en ben altijd op zoek naar nieuwe uitdagingen.",
+      "Hallo, ik ben <b>Erfan Hosseini</b>, een Computer Science and Engineering student en Software Engineer. Gepassioneerd over Machine Learning, Data Science en Cloud technologie",
     'intro.sr.github': 'GitHub Profiel',
     'intro.sr.linkedin': 'LinkedIn Profiel',
     'intro.sr.email': 'E-mail contact',
+    'cv.download': 'Download CV',
 
     // About Me
     'about.title': 'Over mij',
     'about.description':
-      'Hoi, ik ben Andrés, een fullstack softwareontwikkelaar uit Colombia 🇨🇴.',
-    'about.tools': 'Mijn favoriete tools zijn:',
+      "Ik ben opgegroeid met een laptop op mijn schoot, altijd aangetrokken tot het soort technologie dat zijn tijd vooruit leek, de futuristische ideeën die je zou zien in Back to the Future, Star Wars, of de Marvel films. Wat begon als nieuwsgierigheid werd mijn passie: ik wilde technologie niet alleen gebruiken, ik wilde het begrijpen, bouwen en met de wereld delen. Die drive is bij me gebleven, en vandaag de dag studeer ik Computer Science and Engineering aan de Technische Universiteit Delft, met een specialisatie in Artificial Intelligence, Data Science en Machine Learning. Ik ben in het bijzonder geïnspireerd door intelligente systemen die kunnen leren, redeneren en het menselijk leven kunnen verbeteren, en ik ben vastbesloten bij te dragen aan die toekomst door middel van sterke engineering, creatieve probleemoplossing en een honger naar leren.",
     'about.hobbies':
-      'Naast programmeren ben ik gepassioneerd over tatoeages, voetbal en reizen. Een ongewone hobby van mij is klassieke muziek spelen op de gitaar of ukelele.',
+      "Hobbies tekst",
 
     // Now Card
     'now.title': 'Nu',
     'now.whatsThat': "wat is dat?",
-    'now.description': 'Momenteel werkzaam als freelancer',
+    'now.description': 'Momenteel werkzaam als IT Engineer',
 
     // Experience Card
     'experience.title': 'Ervaring',
@@ -172,9 +172,9 @@ export const ui = {
     '404.goHome': 'Ga terug naar home',
 
     // Home Page
-    'home.title': 'Andrés Plaza - Full Stack Developer',
+    'home.title': 'Erfan Hosseini - Engineering Student',
     'home.description':
-      'Andrés Plaza - Full Stack Developer - Portfolio, Projecten, CV, Over Mij, Contact, Tijdzone, Nu, Ervaring, Tattoo, Studie',
+      'Erfan Hosseini - Engineering Student - Portfolio, Projecten, CV, Over Mij, Contact, Nu, Ervaring, Studie',
     'home.portfolio': 'Portfolio & Projecten',
 
     // Footer
