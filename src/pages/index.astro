@@ -15,6 +15,7 @@ import {
   getRouteFromUrl,
 } from '../i18n/utils'
 import { languages } from '../i18n/ui'
+import FooterCard from '../components/sections/FooterCard.astro'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -103,5 +104,6 @@ const navigationTranslations = {
     <ContactsCard />
     <ExperienceCard />
     <StudyCard />
+    <FooterCard />
   </main>
 </BaseLayout>

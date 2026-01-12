@@ -84,10 +84,7 @@ export const ui = {
     'home.portfolio': 'Portfolio & Projects',
 
     // Footer
-    'footer.builtBy': 'Built by',
-    'footer.with': 'with',
-    'footer.using':
-      'using Astro and Tailwind CSS. The source code is available on',
+    'footer.builtBy': '@ 2026 - Built by Erfan Hosseini',
 
     // Experience - Common
     'experience.current': 'Current',
@@ -178,10 +175,7 @@ export const ui = {
     'home.portfolio': 'Portfolio & Projecten',
 
     // Footer
-    'footer.builtBy': 'Gebouwd door',
-    'footer.with': 'met',
-    'footer.using':
-      'met behulp van Astro en Tailwind CSS. De broncode is beschikbaar op',
+    'footer.builtBy': '@ 2026 - Gemaakt door Erfan Hosseini',
 
     // Experience - Common
     'experience.current': 'Huidig',

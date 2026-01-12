@@ -1,0 +1,15 @@
+---
+import Card from '../Card.astro'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<Card colSpan='md:col-span-2' rowSpan='md:row-span-1'>
+    <div class="flex h-ful items-center justify-center text center">
+        <p class="text-sm text-muted-foreground">
+            {t('footer.builtBy')}
+        </p>
+    </div>
+</Card>
