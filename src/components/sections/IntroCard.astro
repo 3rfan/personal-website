@@ -10,54 +10,54 @@ const t = useTranslations(lang)
 const PDF = '/CV-English.pdf'
 ---
 
-<Card colSpan="md:col-span-3" rowSpan="md:row-span-4">
+<Card colSpan="lg:col-span-4" rowSpan="lg:row-span-1">
   <div class="flex h-full w-full">
     <div class="flex flex-col justify-between gap-4 md:max-h-[300px]">
       <div class="flex h-full flex-col">
-        <h6 class="m-0 text-sm font-light text-gray-500">
+        <h6 class="m-0 text-lg font-light text-gray-500">
           {t('intro.welcome')}
         </h6>
-        <p class="m-0 text-xl font-light" set:html={t('intro.title')} />
+        <p class="m-0 text-lg font-light" set:html={t('intro.title')} />
       </div>
-      <div class="flex gap-4">
+      <div class="flex gap-3">
         <a href={LINKS.github} aria-label="github profile" target="_blank">
-          <Button aria-label="github profile">
-            <Github />
+          <Button aria-label="github profile" size="sm">
+            <Github size={18} />
             <span class="sr-only">{t('intro.sr.github')}</span>
           </Button>
         </a>
         <a href={LINKS.linkedin} aria-label="linkeding profile" target="_blank">
-          <Button aria-label="linkedin profile">
-            <Linkedin />
+          <Button aria-label="linkedin profile" size="sm">
+            <Linkedin size={18} />
             <span class="sr-only">{t('intro.sr.linkedin')}</span>
           </Button>
         </a>
         <a href={LINKS.mail} aria-label="mail profile" target="_blank">
-          <Button>
-            <Mail />
+          <Button size="sm">
+            <Mail size={18} />
             <span class="sr-only">{t('intro.sr.email')}</span>
           </Button>
         </a>
         <a href={PDF} aria-label="download CV" target="_blank">
-          <Button>
-            <File />
+          <Button size="sm">
+            <File size={18} />
             <span class="sr-only">{t('cv.download')}</span>
           </Button>
         </a>
       </div>
     </div>
     <img
-      width="320"
-      height="320"
+      width="240"
+      height="240"
       src="/me-light.png"
-      class="pointer-events-none absolute bottom-[-20px] right-[-110px] z-[-1] max-h-[320px] w-auto select-none opacity-50 md:relative md:bottom-auto md:right-auto md:z-auto md:opacity-100 dark:hidden"
+      class="pointer-events-none absolute bottom-[-20px] right-[-110px] z-[-1] max-h-[240px] w-auto select-none opacity-50 md:relative md:bottom-auto md:right-auto md:z-auto md:opacity-100 dark:hidden"
       alt="Portrait of Erfan Hosseini (Light Mode)"
     />
     <img
-      width="320"
-      height="320"
+      width="240"
+      height="240"
       src="/me-dark.png"
-      class="pointer-events-none absolute bottom-[-20px] right-[-110px] z-[-1] max-h-[320px] w-auto select-none opacity-50 md:relative md:bottom-auto md:right-auto md:z-auto md:opacity-100 hidden dark:block"
+      class="pointer-events-none absolute bottom-[-20px] right-[-110px] z-[-1] max-h-[240px] w-auto select-none opacity-50 md:relative md:bottom-auto md:right-auto md:z-auto md:opacity-100 hidden dark:block"
       alt="Portrait of Erfan Hosseini (Dark Mode)"
     />
   </div>

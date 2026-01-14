@@ -138,7 +138,7 @@ export function NavigationCard({
   return (
     <div className="flex h-full flex-col gap-4">
       <div className="flex flex-col gap-2">
-        <h3 className="text-sm font-semibold text-muted-foreground">Theme</h3>
+        <h6 className="text-sm font-semibold text-muted-foreground">Theme</h6>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="sm" className="w-full justify-start">
@@ -168,10 +168,10 @@ export function NavigationCard({
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="sm" className="w-full justify-start">
-              <span className="text-xl leading-none">
+              <span className="text-lg leading-none">
                 {languageFlags[currentLang as keyof typeof languageFlags]}
               </span>
-              <span className="ml-2">
+              <span className="text-sm ml-2">
                 {languages[currentLang as keyof typeof languages]}
               </span>
             </Button>
@@ -185,7 +185,7 @@ export function NavigationCard({
                   currentLang === l ? 'bg-accent font-semibold' : ''
                 }`}
               >
-                <span className="text-xl leading-none">
+                <span className="text-sm leading-none">
                   {languageFlags[l as keyof typeof languageFlags]}
                 </span>
                 <span>{label}</span>
@@ -201,7 +201,7 @@ export function NavigationCard({
         <div className="flex flex-col gap-1">
           <Button
             variant="ghost"
-            size="sm"
+            size="xs"
             className={`justify-start ${activeSection === 'about' ? 'bg-accent' : ''}`}
             onClick={() => scrollToSection('about')}
           >
@@ -210,7 +210,7 @@ export function NavigationCard({
           </Button>
           <Button
             variant="ghost"
-            size="sm"
+            size="xs"
             className={`justify-start ${activeSection === 'contacts' ? 'bg-accent' : ''}`}
             onClick={() => scrollToSection('contacts')}
           >
@@ -219,7 +219,7 @@ export function NavigationCard({
           </Button>
           <Button
             variant="ghost"
-            size="sm"
+            size="xs"
             className={`justify-start ${activeSection === 'experience' ? 'bg-accent' : ''}`}
             onClick={() => scrollToSection('experience')}
           >
@@ -228,7 +228,7 @@ export function NavigationCard({
           </Button>
           <Button
             variant="ghost"
-            size="sm"
+            size="xs"
             className={`justify-start ${activeSection === 'now' ? 'bg-accent' : ''}`}
             onClick={() => scrollToSection('now')}
           >
@@ -237,7 +237,7 @@ export function NavigationCard({
           </Button>
           <Button
             variant="ghost"
-            size="sm"
+            size="xs"
             className={`justify-start ${activeSection === 'portfolio' ? 'bg-accent' : ''}`}
             onClick={() => scrollToSection('portfolio')}
           >

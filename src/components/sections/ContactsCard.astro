@@ -7,20 +7,20 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-4">
+<Card colSpan="md:col-span-2" rowSpan="lg:row-span-1">
   <div class="h-full">
     <header class="flex items-center">
-      <h1 class="text-xl font-bold text-foreground">
+      <h1 class="text-lg font-bold text-foreground">
         {t('contacts.title')}
       </h1>
     </header>
     <address class="mt-4 flex flex-col">
-      <h2 class="text-gray-500">{t('contacts.details')}</h2>
-      <p>erfan_hosseini1@hotmail.com</p>
-      <p>Delft, The Netherlands</p>
+      <h2 class="text-sm text-gray-500">{t('contacts.details')}</h2>
+      <p class="text-sm">erfan_hosseini1@hotmail.com</p>
+      <p class="text-sm">Delft, The Netherlands</p>
     </address>
     <div class="mt-4 flex w-fit flex-col">
-      <h2 class="text-gray-500">{t('contacts.socials')}</h2>
+      <h2 class="text-sm text-gray-500">{t('contacts.socials')}</h2>
       <ul>
         <li>
           <a href={LINKS.linkedin} target="_blank">Linkedin</a>

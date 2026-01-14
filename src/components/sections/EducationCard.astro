@@ -8,7 +8,7 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-1" title={t('education.title')}>
+<Card colSpan="lg:col-span-2" rowSpan="lg:row-span-1" title={t('education.title')}>
   <div class="mt-2 flex w-full flex-wrap items-center justify-center gap-2">
     {
       EDUCATION.map((education) => (

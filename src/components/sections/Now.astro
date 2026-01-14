@@ -7,10 +7,10 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-2">
+<Card colSpan="md:col-span-1" rowSpan="lg:row-span-1">
   <div class="mb-2 flex w-full items-start justify-between">
     <div class="flex flex-col">
-      <h2>{t('now.title')}</h2>
+      <h2 class="text-base">{t('now.title')}</h2>
       <a href="https://sive.rs/nowff" target="_blank">
         <span class="cursor-pointer text-xs text-gray-500"
           >{t('now.whatsThat')}</span
