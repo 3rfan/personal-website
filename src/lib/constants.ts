@@ -33,9 +33,12 @@ export const PROJECTS: Page = {
   DESCRIPTION: 'Recent projects I have worked on.',
 }
 
-// Study Page
-export const STUDIES = [
-
+// Education Page
+export const EDUCATION = [
+  {
+    institution: 'Delft University of Technology',
+    link: 'https://www.tudelft.nl/en/',
+  }
 ]
 
 export const EXPERIENCE = [

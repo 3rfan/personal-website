@@ -58,8 +58,11 @@ export const ui = {
     'contacts.details': 'Contact Details',
     'contacts.socials': 'Socials',
 
-    // Study Card
-    'study.title': 'Study',
+    // Education Card
+    'education.title': 'Education',
+    'education.institution': 'Delft University of Technology',
+    'education.degree': 'Computer Science and Engineering',
+
 
     // Portfolio Page
     'portfolio.title': 'Portfolio',
