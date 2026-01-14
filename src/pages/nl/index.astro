@@ -81,9 +81,9 @@ const navigationTranslations = {
   >
   </div>
   <main
-    class="relative m-auto grid w-full max-w-6xl gap-2 overflow-hidden p-2 sm:gap-2 sm:p-4 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-4 lg:grid-rows-8 lg:gap-4"
+    class="relative m-auto grid w-full max-w-5xl gap-3 overflow-visible p-3 sm:gap-3 sm:p-4 md:grid-cols-2 md:gap-4 md:p-6 lg:grid-cols-5 lg:auto-rows-min lg:gap-4"
   >
-    <Card colSpan="md:col-span-1" rowSpan="md:row-span-3">
+    <Card colSpan="md:col-span-1" rowSpan="lg:row-span-2">
       <NavigationCard
         currentLang={lang}
         currentRoute={route}
@@ -93,17 +93,17 @@ const navigationTranslations = {
       />
     </Card>
     <IntroCard />
-    <AboutMe />
-    <Now />
+    <!-- <Now /> -->
+    <EducationCard />
+    <ExperienceCard />
     <Card
       colSpan="md:col-span-1"
-      rowSpan="md:row-span-2"
+      rowSpan="lg:row-span-1"
       title={t('home.portfolio')}
       href={translatePath('/portfolio')}
     />
-    <ContactsCard />
-    <ExperienceCard />
-    <EducationCard />
+    <AboutMe />
+    <!-- <ContactsCard /> -->
     <FooterCard />
   </main>
 </BaseLayout>

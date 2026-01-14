@@ -54,7 +54,7 @@ export const ui = {
     'experience.viewMore': 'View More',
 
     // Contacts Card
-    'contacts.title': "Let's start working together!",
+    'contacts.title': "Contact me",
     'contacts.details': 'Contact Details',
     'contacts.socials': 'Socials',
 
@@ -62,7 +62,6 @@ export const ui = {
     'education.title': 'Education',
     'education.institution': 'Delft University of Technology',
     'education.degree': 'Computer Science and Engineering',
-
 
     // Portfolio Page
     'portfolio.title': 'Portfolio',
@@ -84,7 +83,7 @@ export const ui = {
     'home.title': 'Erfan Hosseini - Engineering Student',
     'home.description':
       'Erfan Hosseini - Engineering Student - Portfolio, Projects, CV, About Me, Contact, Now, Experience, Study',
-    'home.portfolio': 'Portfolio & Projects',
+    'home.portfolio': 'Projects',
 
     // Footer
     'footer.builtBy': '@ 2026 - Built by Erfan Hosseini',
