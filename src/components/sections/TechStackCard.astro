@@ -1,0 +1,66 @@
+---
+import Card from '../Card.astro'
+import { TechBadge } from '../TechBadge'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const technologies = [
+  'Java',
+  'Python',
+  'SQL',
+  'TypeScript',
+  'React',
+  'Node.js',
+  'Azure',
+  'Git',
+  'Docker',
+]
+---
+
+<Card colSpan="md:col-span-2" rowSpan="lg:row-span-1" title={t('techstack.title')}>
+  <div class="relative mt-2 overflow-hidden">
+    <!-- Gradient fade on edges -->
+    <div
+      class="pointer-events-none absolute left-0 top-0 z-10 h-full w-12 bg-gradient-to-r from-card to-transparent"
+    >
+    </div>
+    <div
+      class="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 bg-gradient-to-l from-card to-transparent"
+    >
+    </div>
+
+    <!-- Scrolling container -->
+    <div class="scroll-container flex gap-3 py-2">
+      <!-- First set of technologies -->
+      <div class="flex shrink-0 animate-scroll gap-3">
+        {technologies.map((tech) => <TechBadge name={tech} client:load />)}
+      </div>
+
+      <!-- Duplicate set for seamless loop -->
+      <div class="flex shrink-0 animate-scroll gap-3">
+        {technologies.map((tech) => <TechBadge name={tech} client:load />)}
+      </div>
+    </div>
+  </div>
+</Card>
+
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 28s linear infinite;
+  }
+
+  .scroll-container:hover .animate-scroll {
+    animation-play-state: paused;
+  }
+</style>

@@ -70,7 +70,8 @@ export const ui = {
     'hobbies.gaming': 'Gaming',
     'hobbies.history': 'History',
     'hobbies.languages': 'Learning languages',
-
+    // Tech Stack Card
+    'techstack.title': 'Tech Stack',
     // Portfolio Page
     'portfolio.title': 'Portfolio',
     'portfolio.description': "Projects and some clone's that I did",
@@ -169,6 +170,9 @@ export const ui = {
     'hobbies.gaming': 'Gamen',
     'hobbies.history': 'Geschiedenis',
     'hobbies.languages': 'Talen leren',
+
+    // Tech Stack Card
+    'techstack.title': 'Tech Stack',
 
     // Portfolio Page
     'portfolio.title': 'Portfolio',
