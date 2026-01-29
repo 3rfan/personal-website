@@ -1,0 +1,27 @@
+---
+import Card from '../Card.astro'
+import { Badge } from '../ui/badge'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const hobbies = [
+  { key: 'hobbies.football', icon: '⚽' },
+  { key: 'hobbies.reading', icon: '📚' },
+  { key: 'hobbies.gaming', icon: '🎮' },
+]
+---
+
+<Card colSpan="md:col-span-2" rowSpan="lg:row-span-1" title={t('hobbies.title')}>
+  <div class="mt-2 flex w-full flex-wrap items-center gap-2">
+    {
+      hobbies.map((hobby) => (
+        <Badge variant="outline" className="flex items-center gap-1.5">
+          <span>{hobby.icon}</span>
+          <span>{t(hobby.key)}</span>
+        </Badge>
+      ))
+    }
+  </div>
+</Card>
