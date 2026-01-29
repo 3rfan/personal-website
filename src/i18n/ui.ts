@@ -63,6 +63,12 @@ export const ui = {
     'education.institution': 'Delft University of Technology',
     'education.degree': 'Computer Science and Engineering',
 
+    // Hobbies Card
+    'hobbies.title': 'Hobbies',
+    'hobbies.football': 'Football',
+    'hobbies.reading': 'Reading',
+    'hobbies.gaming': 'Gaming',
+
     // Portfolio Page
     'portfolio.title': 'Portfolio',
     'portfolio.description': "Projects and some clone's that I did",
@@ -154,6 +160,12 @@ export const ui = {
     // Study Card
     'study.title': 'Studie',
 
+    // Hobbies Card
+    'hobbies.title': 'Hobby\'s',
+    'hobbies.football': 'Voetbal',
+    'hobbies.reading': 'Lezen',
+    'hobbies.gaming': 'Gamen',
+
     // Portfolio Page
     'portfolio.title': 'Portfolio',
     'portfolio.description': 'Projecten en enkele klonen die ik heb gemaakt',
@@ -174,7 +186,7 @@ export const ui = {
     'home.title': 'Erfan Hosseini - Engineering Student',
     'home.description':
       'Erfan Hosseini - Engineering Student - Portfolio, Projecten, CV, Over Mij, Contact, Nu, Ervaring, Studie',
-    'home.portfolio': 'Portfolio & Projecten',
+    'home.portfolio': 'Projecten',
 
     // Footer
     'footer.builtBy': '@ 2026 - Gemaakt door Erfan Hosseini',
