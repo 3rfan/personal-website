@@ -18,6 +18,20 @@ const lang = getLangFromUrl(Astro.url)
   <head>
     <HeadSEO title={title} description={description} ogImage={ogImage} />
     <ClientRouter />
+    <script is:inline>
+      // Apply theme immediately to prevent flash of wrong theme
+      ;(function() {
+        const theme = localStorage.getItem('theme') || 'system'
+        const isDark = theme === 'dark' || 
+          (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        
+        if (isDark) {
+          document.documentElement.classList.add('dark')
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
+      })()
+    </script>
   </head>
   <body class="font-sans antialiased">
     <BackgroundGradient />
