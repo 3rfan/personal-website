@@ -68,6 +68,7 @@ export const ui = {
     'hobbies.football': 'Football',
     'hobbies.reading': 'Reading',
     'hobbies.gaming': 'Gaming',
+    'hobbies.history': 'History',
 
     // Portfolio Page
     'portfolio.title': 'Portfolio',
@@ -165,6 +166,7 @@ export const ui = {
     'hobbies.football': 'Voetbal',
     'hobbies.reading': 'Lezen',
     'hobbies.gaming': 'Gamen',
+    'hobbies.history': 'Geschiedenis',
 
     // Portfolio Page
     'portfolio.title': 'Portfolio',
