@@ -9,6 +9,7 @@ import ExperienceCard from '../components/sections/ExperienceCard.astro'
 import EducationCard from '../components/sections/EducationCard.astro'
 import HobbiesCard from '../components/sections/HobbiesCard.astro'
 import TechStackCard from '../components/sections/TechStackCard.astro'
+import ArtCard from '../components/sections/ArtCard.astro'
 import { NavigationCard } from '../components/sections/NavigationCard'
 import {
   getLangFromUrl,
@@ -100,13 +101,14 @@ const navigationTranslations = {
     <ExperienceCard />
     <Card
       colSpan="md:col-span-1"
-      rowSpan="lg:row-span-1"
+      rowSpan="lg:row-span-2"
       title={t('home.portfolio')}
       href={translatePath('/portfolio')}
     />
     <AboutMe />
     <!-- <ContactsCard /> -->
     <HobbiesCard />
+    <ArtCard />
     <TechStackCard />
     <FooterCard />
   </main>
