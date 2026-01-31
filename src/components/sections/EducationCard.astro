@@ -1,6 +1,5 @@
 ---
 import Card from '../Card.astro'
-import { Badge } from '../ui/badge'
 import { EDUCATION } from '../../lib/constants'
 import { getLangFromUrl, useTranslations } from '../../i18n/utils'
 
@@ -9,12 +8,26 @@ const t = useTranslations(lang)
 ---
 
 <Card colSpan="lg:col-span-2" rowSpan="lg:row-span-2" title={t('education.title')}>
-  <div class="mt-2 flex w-full flex-wrap items-center justify-center gap-2">
+  <div class="mt-4 space-y-6">
     {
       EDUCATION.map((education) => (
-        <a href={education.link} target="__blank">
-          <Badge variant="outline">{education.institution}</Badge>
-        </a>
+        <div class="space-y-1">
+          <h3 class="text-base font-semibold">{education.degree}</h3>
+          <div class="flex items-center justify-between gap-4">
+            <a
+              href={education.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm text-primary hover:underline"
+            >
+              {education.institution}
+            </a>
+            <p class="text-xs text-muted-foreground whitespace-nowrap">
+              {education.start} - {education.end}
+            </p>
+          </div>
+          <p class="text-sm text-muted-foreground">{education.specialization}</p>
+        </div>
       ))
     }
   </div>

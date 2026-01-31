@@ -37,6 +37,10 @@ export const PROJECTS: Page = {
 export const EDUCATION = [
   {
     institution: 'Delft University of Technology',
+    degree: 'BSc Computer Science and Engineering',
+    specialization: '- AI and Data Specialisation',
+    start: '2024',
+    end: '2028',
     link: 'https://www.tudelft.nl/en/',
   }
 ]
