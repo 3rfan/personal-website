@@ -20,12 +20,6 @@ const PDF = '/CV-English.pdf'
         <p class="m-0 text-lg font-light" set:html={t('intro.title')} />
       </div>
       <div class="flex gap-3">
-        <a href={LINKS.github} aria-label="github profile" target="_blank">
-          <Button aria-label="github profile" size="sm">
-            <Github size={18} />
-            <span class="sr-only">{t('intro.sr.github')}</span>
-          </Button>
-        </a>
         <a href={LINKS.linkedin} aria-label="linkeding profile" target="_blank">
           <Button aria-label="linkedin profile" size="sm">
             <Linkedin size={18} />
@@ -36,6 +30,12 @@ const PDF = '/CV-English.pdf'
           <Button size="sm">
             <Mail size={18} />
             <span class="sr-only">{t('intro.sr.email')}</span>
+          </Button>
+        </a>
+        <a href={LINKS.github} aria-label="github profile" target="_blank">
+          <Button aria-label="github profile" size="sm">
+            <Github size={18} />
+            <span class="sr-only">{t('intro.sr.github')}</span>
           </Button>
         </a>
         <a href={PDF} aria-label="download CV" target="_blank">
