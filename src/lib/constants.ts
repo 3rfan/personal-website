@@ -47,9 +47,15 @@ export const EDUCATION = [
 
 export const EXPERIENCE = [
   {
-    id: 'BICT Groep',
+    id: 'bictgroep',
     start: '2024',
     link: 'https://www.bictgroep.nl/',
     end: 'Current',
+  },
+  {
+    id: 'bictgroep2',
+    start: '2023',
+    link: 'https://www.bictgroep.nl/',
+    end: '2024',
   },
 ]

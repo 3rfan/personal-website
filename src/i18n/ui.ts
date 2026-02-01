@@ -141,12 +141,12 @@ export const ui = {
 
     // About Me
     'about.title': 'Over mij',
-    'about.description':
-      "Ik ben opgegroeid met een laptop op mijn schoot, altijd aangetrokken tot het soort technologie dat zijn tijd vooruit leek, de futuristische ideeën die je zou zien in Back to the Future, Star Wars, of de Marvel films. Wat begon als nieuwsgierigheid werd mijn passie: ik wilde technologie niet alleen gebruiken, ik wilde het begrijpen, bouwen en met de wereld delen. Die drive is bij me gebleven, en vandaag de dag studeer ik Computer Science and Engineering aan de Technische Universiteit Delft, met een specialisatie in Artificial Intelligence, Data Science en Machine Learning. Ik ben in het bijzonder geïnspireerd door intelligente systemen die kunnen leren, redeneren en het menselijk leven kunnen verbeteren, en ik ben vastbesloten bij te dragen aan die toekomst door middel van sterke engineering, creatieve probleemoplossing en een honger naar leren.",
-    'about.hobbies':
-      "Hobbies tekst",
-
-    // Now Card
+    'about.description1':
+      "Ik heb me altijd aangetrokken gevoeld tot technologie die zijn tijd ver vooruit was, de futuristische ideeën die je ziet in Back to the Future, Star Wars of de Marvel-films. <br></br> Wat begon als nieuwsgierigheid, werd mijn passie: ik wilde technologie niet alleen gebruiken, ik wilde het begrijpen, bouwen en delen met de wereld. Die drive is me altijd bijgebleven en vandaag studeer ik Technische Informatica en Engineering aan de Technische Universiteit Delft, met als specialisatie Kunstmatige Intelligentie, Data Science en Machine Learning.",
+    'about.description2':
+      "Ik ben vooral geïnteresseerd in intelligente systemen die kunnen leren, redeneren en het menselijk leven kunnen verbeteren, en ik ben vastbesloten om bij te dragen aan die toekomst door middel van sterke techniek, creatieve probleemoplossing en een honger naar kennis.",    
+    
+      // Now Card
     'now.title': 'Nu',
     'now.whatsThat': "wat is dat?",
     'now.description': 'Momenteel werkzaam als IT Engineer',
