@@ -33,6 +33,7 @@ ehthumbs.db
 Desktop.ini
 
 # IDE/Editor files
+.idx/
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
