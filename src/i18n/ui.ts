@@ -27,6 +27,9 @@ export const ui = {
     'nav.work': 'Work',
     'nav.about': 'About',
     'nav.contact': 'Contact',
+    'nav.theme': 'Theme',
+    'nav.language': 'Language',
+    'nav.sections': 'Sections',
 
     // Intro Card
     'intro.welcome': 'Welcome!',
@@ -129,6 +132,9 @@ export const ui = {
     'nav.work': 'Werk',
     'nav.about': 'Over',
     'nav.contact': 'Contact',
+    'nav.theme': 'Thema',
+    'nav.language': 'Taal',
+    'nav.sections': 'Secties',
 
     // Intro Card
     'intro.welcome': 'Welkom!',

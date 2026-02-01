@@ -23,6 +23,11 @@ interface NavigationCardProps {
     portfolio: string
     techstack: string
   }
+  labels: {
+    theme: string
+    language: string
+    sections: string
+  }
 }
 
 export function NavigationCard({
@@ -30,6 +35,7 @@ export function NavigationCard({
   currentRoute,
   languagePaths,
   translations,
+  labels,
 }: NavigationCardProps) {
   const [theme, setThemeState] = React.useState<'light' | 'dark' | 'system'>(
     'light',
@@ -192,7 +198,7 @@ export function NavigationCard({
   return (
     <div className="flex h-full flex-col gap-4">
       <div className="hidden md:flex flex-col gap-2">
-        <h6 className="text-sm font-semibold text-muted-foreground">Theme</h6>
+        <h6 className="text-sm font-semibold text-muted-foreground">{labels.theme}</h6>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="sm" className="w-full justify-start">
@@ -218,7 +224,7 @@ export function NavigationCard({
       </div>
 
       <div className="hidden md:flex flex-col gap-2">
-        <h3 className="text-sm font-semibold text-muted-foreground">Language</h3>
+        <h3 className="text-sm font-semibold text-muted-foreground">{labels.language}</h3>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="sm" className="w-full justify-start">
@@ -252,7 +258,7 @@ export function NavigationCard({
 
       {/* Desktop Navigation - Vertical */}
       <div className="hidden flex-col gap-2 md:flex">
-        <h3 className="text-sm font-semibold text-muted-foreground">Sections</h3>
+        <h3 className="text-sm font-semibold text-muted-foreground">{labels.sections}</h3>
         <div className="flex flex-col gap-1">
           <Button
             variant="ghost"

@@ -39,6 +39,12 @@ const navigationTranslations = {
   portfolio: t('home.portfolio'),
   techstack: t('techstack.title'),
 }
+
+const navigationLabels = {
+  theme: t('nav.theme'),
+  language: t('nav.language'),
+  sections: t('nav.sections'),
+}
 ---
 
 <script>
@@ -93,6 +99,7 @@ const navigationTranslations = {
         currentRoute={route}
         languagePaths={languagePaths}
         translations={navigationTranslations}
+        labels={navigationLabels}
         client:load
       />
     </Card>
