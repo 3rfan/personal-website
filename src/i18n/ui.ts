@@ -39,10 +39,10 @@ export const ui = {
 
     // About Me
     'about.title': 'About me',
-    'about.description':
-      "I've grown up with a laptop on my lap, always drawn to the kind of technology that felt ahead of its time, the futuristic ideas you would see in Back to the Future, Star Wars, or the Marvel movies. What started as curiosity became my passion: I didn’t just want to use technology, I wanted to understand it, build it, and share it with the world. That drive has stayed with me ever since, and today I’m studying Computer Science and Engineering at Delft University of Technology, specializing in Artificial Intelligence, Data Science, and Machine Learning. I’m in particular insipred by intelligent systems that can learn, reason, and improve human life and I’m determined to contribute to that future through strong engineering, creative problem-solving, and a hunger for learning.",
-    'about.hobbies':
-      "Hobbies text",
+    'about.description1':
+      "I have always been drawn to the kind of technology that felt ahead of its time, the futuristic ideas you would see in Back to the Future, Star Wars, or the Marvel movies. <br></br> What started as curiosity became my passion: I didn’t just want to use technology, I wanted to understand it, build it, and share it with the world. That drive has stayed with me ever since, and today I’m studying Computer Science and Engineering at Delft University of Technology, specializing in Artificial Intelligence, Data Science, and Machine Learning.",
+    'about.description2':
+      "I’m in particular interested in intelligent systems that can learn, reason, and improve human life and I’m determined to contribute to that future through strong engineering, creative problem-solving, and a hunger for learning.",
 
     // Now Card
     'now.title': 'Now',
