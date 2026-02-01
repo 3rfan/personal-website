@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Moon, Sun, Home, User, Briefcase, Mail, BookOpen } from 'lucide-react'
+import { Moon, Sun, User, Briefcase, Mail, FolderKanban, GraduationCap, Code2 } from 'lucide-react'
 import { Button } from '../ui/button'
 import {
   DropdownMenu,
@@ -16,11 +16,12 @@ interface NavigationCardProps {
   currentRoute: string
   languagePaths: Record<string, string>
   translations: {
-    about: string
     contacts: string
+    about: string
+    education: string
     experience: string
-    now: string
     portfolio: string
+    techstack: string
   }
 }
 
@@ -89,20 +90,83 @@ export function NavigationCard({
   }
 
   const scrollToSection = (sectionId: string) => {
-    // Find the card element by looking for specific card content
-    let targetElement: HTMLElement | null = null
-    
-    // Map section IDs to their identifying content
     const sectionSelectors: Record<string, string> = {
-      about: translations.about,
       contacts: translations.contacts,
+      about: translations.about,
+      education: translations.education,
       experience: translations.experience,
-      now: translations.now,
       portfolio: translations.portfolio,
+      techstack: translations.techstack,
     }
 
-    // Search for the card with the matching title
     const allCards = document.querySelectorAll('.card-animate')
+    const allButtons = document.querySelectorAll('a[href] button, a[href] > *')
+    
+    // Remove active borders from all cards and button glows
+    allCards.forEach((card) => {
+      card.classList.remove('border-primary', 'border-2')
+    })
+    allButtons.forEach((btn) => {
+      if (btn instanceof HTMLElement) {
+        btn.style.boxShadow = ''
+      }
+    })
+
+    // Special handling for Contact Me - highlight the contact buttons
+    if (sectionId === 'contacts') {
+      // Find IntroCard and highlight Email and LinkedIn buttons
+      const introCard = Array.from(allCards).find((card) => {
+        const welcomeText = card.querySelector('h6')
+        return welcomeText?.textContent?.toLowerCase().includes('welcome')
+      })
+
+      if (introCard) {
+        introCard.classList.add('border-primary', 'border-2')
+        
+        // Find and highlight LinkedIn and Email buttons with faint glow and jump animation
+        const contactLinks = introCard.querySelectorAll('a[href*="linkedin"], a[href*="mailto"], a[href*="@"]')
+        contactLinks.forEach((link) => {
+          const button = link.querySelector('button')
+          if (button) {
+            button.style.boxShadow = '0 0 30px hsl(var(--primary) / 0.6)'
+            button.style.transition = 'box-shadow 0.3s ease, transform 0.4s ease'
+            
+            // Jump animation: up, down, up, settle
+            button.style.transform = 'translateY(-8px)'
+            setTimeout(() => {
+              button.style.transform = 'translateY(2px)'
+            }, 150)
+            setTimeout(() => {
+              button.style.transform = 'translateY(-4px)'
+            }, 300)
+            setTimeout(() => {
+              button.style.transform = 'translateY(0)'
+            }, 450)
+          }
+        })
+
+        // Scroll to IntroCard
+        introCard.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        setActiveSection(sectionId)
+
+        // Remove highlights after 3 seconds
+        setTimeout(() => {
+          introCard.classList.remove('border-primary', 'border-2')
+          contactLinks.forEach((link) => {
+            const button = link.querySelector('button')
+            if (button) {
+              button.style.boxShadow = ''
+              button.style.transform = ''
+            }
+          })
+          setActiveSection('')
+        }, 3000)
+      }
+      return
+    }
+
+    // Normal navigation - find and highlight target card
+    let targetElement: HTMLElement | null = null
     allCards.forEach((card) => {
       const titleElement = card.querySelector('h1, h2, h3')
       if (titleElement?.textContent?.includes(sectionSelectors[sectionId])) {
@@ -111,21 +175,10 @@ export function NavigationCard({
     })
 
     if (targetElement) {
-      // Remove active border from all cards
-      allCards.forEach((card) => {
-        card.classList.remove('border-primary', 'border-2')
-      })
-
-      // Add active border to target card
       targetElement.classList.add('border-primary', 'border-2')
       setActiveSection(sectionId)
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' })
 
-      // Scroll to the element on mobile
-      if (window.innerWidth < 768) {
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      }
-
-      // Remove the border after 3 seconds
       setTimeout(() => {
         if (targetElement) {
           targetElement.classList.remove('border-primary', 'border-2')
@@ -137,7 +190,7 @@ export function NavigationCard({
 
   return (
     <div className="flex h-full flex-col gap-4">
-      <div className="flex flex-col gap-2">
+      <div className="hidden md:flex flex-col gap-2">
         <h6 className="text-sm font-semibold text-muted-foreground">Theme</h6>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -163,7 +216,7 @@ export function NavigationCard({
         </DropdownMenu>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="hidden md:flex flex-col gap-2">
         <h3 className="text-sm font-semibold text-muted-foreground">Language</h3>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -196,9 +249,19 @@ export function NavigationCard({
         </DropdownMenu>
       </div>
 
-      <div className="flex flex-col gap-2">
+      {/* Desktop Navigation - Vertical */}
+      <div className="hidden flex-col gap-2 md:flex">
         <h3 className="text-sm font-semibold text-muted-foreground">Sections</h3>
         <div className="flex flex-col gap-1">
+          <Button
+            variant="ghost"
+            size="xs"
+            className={`justify-start ${activeSection === 'contacts' ? 'bg-accent' : ''}`}
+            onClick={() => scrollToSection('contacts')}
+          >
+            <Mail className="mr-2 h-4 w-4" />
+            {translations.contacts}
+          </Button>
           <Button
             variant="ghost"
             size="xs"
@@ -211,11 +274,11 @@ export function NavigationCard({
           <Button
             variant="ghost"
             size="xs"
-            className={`justify-start ${activeSection === 'contacts' ? 'bg-accent' : ''}`}
-            onClick={() => scrollToSection('contacts')}
+            className={`justify-start ${activeSection === 'education' ? 'bg-accent' : ''}`}
+            onClick={() => scrollToSection('education')}
           >
-            <Mail className="mr-2 h-4 w-4" />
-            {translations.contacts}
+            <GraduationCap className="mr-2 h-4 w-4" />
+            {translations.education}
           </Button>
           <Button
             variant="ghost"
@@ -229,21 +292,132 @@ export function NavigationCard({
           <Button
             variant="ghost"
             size="xs"
-            className={`justify-start ${activeSection === 'now' ? 'bg-accent' : ''}`}
-            onClick={() => scrollToSection('now')}
+            className={`justify-start ${activeSection === 'portfolio' ? 'bg-accent' : ''}`}
+            onClick={() => scrollToSection('portfolio')}
           >
-            <BookOpen className="mr-2 h-4 w-4" />
-            {translations.now}
+            <FolderKanban className="mr-2 h-4 w-4" />
+            {translations.portfolio}
           </Button>
           <Button
             variant="ghost"
             size="xs"
-            className={`justify-start ${activeSection === 'portfolio' ? 'bg-accent' : ''}`}
-            onClick={() => scrollToSection('portfolio')}
+            className={`justify-start ${activeSection === 'techstack' ? 'bg-accent' : ''}`}
+            onClick={() => scrollToSection('techstack')}
           >
-            <Home className="mr-2 h-4 w-4" />
-            {translations.portfolio}
+            <Code2 className="mr-2 h-4 w-4" />
+            {translations.techstack}
           </Button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation - Horizontal Scrollable with Sticky Controls */}
+      <div className="flex gap-2 md:hidden">
+        {/* Scrollable Navigation Items */}
+        <div className="flex gap-2 overflow-x-auto pb-2 flex-1">
+          <Button
+            variant={activeSection === 'contacts' ? 'default' : 'outline'}
+            size="icon"
+            className="shrink-0"
+            onClick={() => scrollToSection('contacts')}
+            aria-label={translations.contacts}
+          >
+            <Mail className="h-4 w-4" />
+          </Button>
+          <Button
+            variant={activeSection === 'about' ? 'default' : 'outline'}
+            size="icon"
+            className="shrink-0"
+            onClick={() => scrollToSection('about')}
+            aria-label={translations.about}
+          >
+            <User className="h-4 w-4" />
+          </Button>
+          <Button
+            variant={activeSection === 'education' ? 'default' : 'outline'}
+            size="icon"
+            className="shrink-0"
+            onClick={() => scrollToSection('education')}
+            aria-label={translations.education}
+          >
+            <GraduationCap className="h-4 w-4" />
+          </Button>
+          <Button
+            variant={activeSection === 'experience' ? 'default' : 'outline'}
+            size="icon"
+            className="shrink-0"
+            onClick={() => scrollToSection('experience')}
+            aria-label={translations.experience}
+          >
+            <Briefcase className="h-4 w-4" />
+          </Button>
+          <Button
+            variant={activeSection === 'portfolio' ? 'default' : 'outline'}
+            size="icon"
+            className="shrink-0"
+            onClick={() => scrollToSection('portfolio')}
+            aria-label={translations.portfolio}
+          >
+            <FolderKanban className="h-4 w-4" />
+          </Button>
+          <Button
+            variant={activeSection === 'techstack' ? 'default' : 'outline'}
+            size="icon"
+            className="shrink-0"
+            onClick={() => scrollToSection('techstack')}
+            aria-label={translations.techstack}
+          >
+            <Code2 className="h-4 w-4" />
+          </Button>
+        </div>
+
+        {/* Sticky Theme & Language Controls */}
+        <div className="flex gap-2 shrink-0">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="icon" aria-label="Toggle theme">
+                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => onChangeTheme('light')}>
+                Light
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => onChangeTheme('dark')}>
+                Dark
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => onChangeTheme('system')}>
+                System
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="icon" aria-label="Change language">
+                <span className="text-lg leading-none">
+                  {languageFlags[currentLang as keyof typeof languageFlags]}
+                </span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="min-w-[140px]">
+              {Object.entries(languages).map(([l, label]) => (
+                <DropdownMenuItem
+                  key={l}
+                  onClick={() => handleLanguageChange(l)}
+                  className={`flex cursor-pointer items-center gap-2 ${
+                    currentLang === l ? 'bg-accent font-semibold' : ''
+                  }`}
+                >
+                  <span className="text-sm leading-none">
+                    {languageFlags[l as keyof typeof languageFlags]}
+                  </span>
+                  <span>{label}</span>
+                  {currentLang === l && <span className="ml-auto text-xs">✓</span>}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </div>
