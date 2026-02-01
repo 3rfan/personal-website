@@ -4,8 +4,8 @@ export const languages = {
 }
 
 export const languageFlags = {
-  en: '🇬🇧',
-  nl: '🇳🇱',
+  en: 'EN',
+  nl: 'NL',
 }
 
 export const defaultLang = 'en'

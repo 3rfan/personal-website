@@ -222,7 +222,7 @@ export function NavigationCard({
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="sm" className="w-full justify-start">
-              <span className="text-lg leading-none">
+              <span className="text-xs font-semibold bg-primary/10 text-primary px-1.5 py-0.5 rounded">
                 {languageFlags[currentLang as keyof typeof languageFlags]}
               </span>
               <span className="text-sm ml-2">
@@ -239,7 +239,7 @@ export function NavigationCard({
                   currentLang === l ? 'bg-accent font-semibold' : ''
                 }`}
               >
-                <span className="text-sm leading-none">
+                <span className="text-xs font-semibold bg-primary/10 text-primary px-1.5 py-0.5 rounded">
                   {languageFlags[l as keyof typeof languageFlags]}
                 </span>
                 <span>{label}</span>
@@ -396,7 +396,7 @@ export function NavigationCard({
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="icon" aria-label="Change language">
-                <span className="text-lg leading-none">
+                <span className="text-xs font-bold">
                   {languageFlags[currentLang as keyof typeof languageFlags]}
                 </span>
               </Button>
@@ -410,7 +410,7 @@ export function NavigationCard({
                     currentLang === l ? 'bg-accent font-semibold' : ''
                   }`}
                 >
-                  <span className="text-sm leading-none">
+                  <span className="text-xs font-semibold bg-primary/10 text-primary px-1.5 py-0.5 rounded">
                     {languageFlags[l as keyof typeof languageFlags]}
                   </span>
                   <span>{label}</span>
