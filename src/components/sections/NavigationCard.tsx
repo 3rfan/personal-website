@@ -263,55 +263,55 @@ export function NavigationCard({
           <Button
             variant="ghost"
             size="xs"
-            className={`justify-start ${activeSection === 'contacts' ? 'bg-accent' : ''}`}
+            className={`group/item justify-start ${activeSection === 'contacts' ? 'bg-accent' : ''}`}
             onClick={() => scrollToSection('contacts')}
           >
-            <Mail className="mr-2 h-4 w-4" />
+            <Mail className="mr-2 h-4 w-4 transition-colors group-hover/item:text-primary" />
             {translations.contacts}
           </Button>
           <Button
             variant="ghost"
             size="xs"
-            className={`justify-start ${activeSection === 'about' ? 'bg-accent' : ''}`}
+            className={`group/item justify-start ${activeSection === 'about' ? 'bg-accent' : ''}`}
             onClick={() => scrollToSection('about')}
           >
-            <User className="mr-2 h-4 w-4" />
+            <User className="mr-2 h-4 w-4 transition-colors group-hover/item:text-primary" />
             {translations.about}
           </Button>
           <Button
             variant="ghost"
             size="xs"
-            className={`justify-start ${activeSection === 'education' ? 'bg-accent' : ''}`}
+            className={`group/item justify-start ${activeSection === 'education' ? 'bg-accent' : ''}`}
             onClick={() => scrollToSection('education')}
           >
-            <GraduationCap className="mr-2 h-4 w-4" />
+            <GraduationCap className="mr-2 h-4 w-4 transition-colors group-hover/item:text-primary" />
             {translations.education}
           </Button>
           <Button
             variant="ghost"
             size="xs"
-            className={`justify-start ${activeSection === 'experience' ? 'bg-accent' : ''}`}
+            className={`group/item justify-start ${activeSection === 'experience' ? 'bg-accent' : ''}`}
             onClick={() => scrollToSection('experience')}
           >
-            <Briefcase className="mr-2 h-4 w-4" />
+            <Briefcase className="mr-2 h-4 w-4 transition-colors group-hover/item:text-primary" />
             {translations.experience}
           </Button>
           <Button
             variant="ghost"
             size="xs"
-            className={`justify-start ${activeSection === 'portfolio' ? 'bg-accent' : ''}`}
+            className={`group/item justify-start ${activeSection === 'portfolio' ? 'bg-accent' : ''}`}
             onClick={() => scrollToSection('portfolio')}
           >
-            <FolderKanban className="mr-2 h-4 w-4" />
+            <FolderKanban className="mr-2 h-4 w-4 transition-colors group-hover/item:text-primary" />
             {translations.portfolio}
           </Button>
           <Button
             variant="ghost"
             size="xs"
-            className={`justify-start ${activeSection === 'techstack' ? 'bg-accent' : ''}`}
+            className={`group/item justify-start ${activeSection === 'techstack' ? 'bg-accent' : ''}`}
             onClick={() => scrollToSection('techstack')}
           >
-            <Code2 className="mr-2 h-4 w-4" />
+            <Code2 className="mr-2 h-4 w-4 transition-colors group-hover/item:text-primary" />
             {translations.techstack}
           </Button>
         </div>
@@ -324,56 +324,56 @@ export function NavigationCard({
           <Button
             variant={activeSection === 'contacts' ? 'default' : 'outline'}
             size="icon"
-            className="shrink-0"
+            className="group/item shrink-0"
             onClick={() => scrollToSection('contacts')}
             aria-label={translations.contacts}
           >
-            <Mail className="h-4 w-4" />
+            <Mail className="h-4 w-4 transition-colors group-hover/item:text-primary" />
           </Button>
           <Button
             variant={activeSection === 'about' ? 'default' : 'outline'}
             size="icon"
-            className="shrink-0"
+            className="group/item shrink-0"
             onClick={() => scrollToSection('about')}
             aria-label={translations.about}
           >
-            <User className="h-4 w-4" />
+            <User className="h-4 w-4 transition-colors group-hover/item:text-primary" />
           </Button>
           <Button
             variant={activeSection === 'education' ? 'default' : 'outline'}
             size="icon"
-            className="shrink-0"
+            className="group/item shrink-0"
             onClick={() => scrollToSection('education')}
             aria-label={translations.education}
           >
-            <GraduationCap className="h-4 w-4" />
+            <GraduationCap className="h-4 w-4 transition-colors group-hover/item:text-primary" />
           </Button>
           <Button
             variant={activeSection === 'experience' ? 'default' : 'outline'}
             size="icon"
-            className="shrink-0"
+            className="group/item shrink-0"
             onClick={() => scrollToSection('experience')}
             aria-label={translations.experience}
           >
-            <Briefcase className="h-4 w-4" />
+            <Briefcase className="h-4 w-4 transition-colors group-hover/item:text-primary" />
           </Button>
           <Button
             variant={activeSection === 'portfolio' ? 'default' : 'outline'}
             size="icon"
-            className="shrink-0"
+            className="group/item shrink-0"
             onClick={() => scrollToSection('portfolio')}
             aria-label={translations.portfolio}
           >
-            <FolderKanban className="h-4 w-4" />
+            <FolderKanban className="h-4 w-4 transition-colors group-hover/item:text-primary" />
           </Button>
           <Button
             variant={activeSection === 'techstack' ? 'default' : 'outline'}
             size="icon"
-            className="shrink-0"
+            className="group/item shrink-0"
             onClick={() => scrollToSection('techstack')}
             aria-label={translations.techstack}
           >
-            <Code2 className="h-4 w-4" />
+            <Code2 className="h-4 w-4 transition-colors group-hover/item:text-primary" />
           </Button>
         </div>
 
