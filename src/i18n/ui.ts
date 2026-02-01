@@ -34,7 +34,7 @@ export const ui = {
     // Intro Card
     'intro.welcome': 'Welcome!',
     'intro.title':
-      "Hi there, I am <b>Erfan Hosseini</b>, a Computer Science and Engineering student and Software Engineer. Passionate about Machine Learning, Data Science and Cloud technology",
+      "Hi there, I am <b>Erfan Hosseini</b>, a Computer Science and Engineering student and Software Engineer. Passionate about Machine Learning, Data Science and Cyber Security",
     'intro.sr.github': 'GitHub Profile',
     'intro.sr.linkedin': 'Linkedin Profile',
     'intro.sr.email': 'Email contact',
@@ -139,7 +139,7 @@ export const ui = {
     // Intro Card
     'intro.welcome': 'Welkom!',
     'intro.title':
-      "Hallo, ik ben <b>Erfan Hosseini</b>, een Computer Science and Engineering student en Software Engineer. Gepassioneerd over Machine Learning, Data Science en Cloud technologie",
+      "Hallo, ik ben <b>Erfan Hosseini</b>, een Computer Science and Engineering student en Software Engineer. Gepassioneerd over Machine Learning, Data Science en Cyber Security",
     'intro.sr.github': 'GitHub Profiel',
     'intro.sr.linkedin': 'LinkedIn Profiel',
     'intro.sr.email': 'E-mail contact',
