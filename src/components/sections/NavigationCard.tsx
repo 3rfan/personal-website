@@ -117,7 +117,8 @@ export function NavigationCard({
       // Find IntroCard and highlight Email and LinkedIn buttons
       const introCard = Array.from(allCards).find((card) => {
         const welcomeText = card.querySelector('h6')
-        return welcomeText?.textContent?.toLowerCase().includes('welcome')
+        const text = welcomeText?.textContent?.toLowerCase()
+        return text?.includes('welcome') || text?.includes('welkom')
       })
 
       if (introCard) {

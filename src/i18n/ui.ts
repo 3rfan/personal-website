@@ -156,7 +156,7 @@ export const ui = {
     'experience.viewMore': 'Bekijk meer',
 
     // Contacts Card
-    'contacts.title': 'Laten we samenwerken!',
+    'contacts.title': 'Contact',
     'contacts.details': 'Contactgegevens',
     'contacts.socials': 'Socials',
 
@@ -197,21 +197,10 @@ export const ui = {
     'home.portfolio': 'Projecten',
 
     // Footer
-    'footer.builtBy': '@ 2026 - Gemaakt door Erfan Hosseini',
+    'footer.builtBy': '@ 2026 - Door Erfan Hosseini',
 
     // Experience - Common
     'experience.current': 'Huidig',
-
-    // Experience - Mercado Libre
-    'experience.mercadolibre.company': 'Mercado Libre',
-    'experience.mercadolibre.position': 'Software Engineer',
-    'experience.mercadolibre.location': 'Bogotá D C, Colombia',
-    'experience.mercadolibre.tasks.0':
-      'Ontwikkeling en onderhoud van schaalbare webapplicaties met moderne technologieën',
-    'experience.mercadolibre.tasks.1':
-      'Samenwerking met multidisciplinaire teams om hoogwaardige producten te leveren',
-    'experience.mercadolibre.tasks.2':
-      'Implementatie van best practices en clean code principes',
 
     // Experience - BICT Groep
     'experience.bictgroep.company': 'BICT Groep',
