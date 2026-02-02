@@ -139,7 +139,7 @@ export const ui = {
     // Intro Card
     'intro.welcome': 'Welkom!',
     'intro.title':
-      "Hallo, ik ben <b>Erfan Hosseini</b>, een Computer Science and Engineering student en Software Engineer. Gepassioneerd over Machine Learning, Data Science en Cyber Security",
+      "Hallo, ik ben <b>Erfan Hosseini</b>, student Computer Science and Engineering en Software Engineer. Gepassioneerd over Machine Learning, Data Science en Cyber Security",
     'intro.sr.github': 'GitHub Profiel',
     'intro.sr.linkedin': 'LinkedIn Profiel',
     'intro.sr.email': 'E-mail contact',
