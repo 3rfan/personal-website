@@ -182,8 +182,8 @@ export const ui = {
 
     // Portfolio Page
     'portfolio.title': 'Portfolio',
-    'portfolio.description': 'Projecten en enkele klonen die ik heb gemaakt',
-    'portfolio.heading': 'Projecten en klonen',
+    'portfolio.description': 'Projecten die ik heb gemaakt',
+    'portfolio.heading': 'Projecten',
 
     // Work Page
     'work.title': 'Werk',
