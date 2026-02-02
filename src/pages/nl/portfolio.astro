@@ -1,8 +1,10 @@
 ---
 import ProjectCard from '../../components/ProjectCard.astro'
-import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../../i18n/utils'
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import Container from '../../components/Container.astro'
+import { Button } from '../../components/ui/button'
+import { ArrowLeft } from 'lucide-react'
 import { contentfulClient } from '../../lib/contentful'
 import type { EntryFieldTypes } from 'contentful'
 
@@ -28,6 +30,7 @@ if (contentfulClient) {
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
+const translatePath = useTranslatedPath(lang)
 ---
 
 <BaseLayout
@@ -36,11 +39,19 @@ const t = useTranslations(lang)
 >
   <main class="flex min-h-[80vh] flex-auto flex-col py-12" transition:animate="slide">
     <Container size="md">
-      <h2
-        class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0"
-      >
-        {t('portfolio.heading')}
-      </h2>
+      <div class="mb-8">
+        <a href={translatePath('/')}>
+          <Button variant="ghost" size="sm" className="mb-4">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            {t('nav.home')}
+          </Button>
+        </a>
+        <h2
+          class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0"
+        >
+          {t('portfolio.heading')}
+        </h2>
+      </div>
     </Container>
     <div class="py-8">
       <Container size="xl">
