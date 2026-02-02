@@ -6,7 +6,7 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<Card colSpan='lg:col-span-2' rowSpan='lg:row-span-1'>
+<Card colSpan='md:col-span-3 lg:col-span-2' rowSpan='lg:row-span-1'>
     <div class="flex h-ful items-center justify-center text center">
         <p class="text-sm text-muted-foreground">
             {t('footer.builtBy')}
