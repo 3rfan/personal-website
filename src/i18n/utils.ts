@@ -124,3 +124,15 @@ export function getRouteFromUrl(url: URL): string | undefined {
 
   return path
 }
+
+export function useTranslatedProjects(lang: keyof typeof ui) {
+  return function (projectId: string) {
+    const t = useTranslations(lang)
+    
+    return {
+      name: t(`projects.${projectId}.name` as any),
+      description: t(`projects.${projectId}.description` as any),
+      shortDescription: t(`projects.${projectId}.shortDescription` as any),
+    }
+  }
+}
