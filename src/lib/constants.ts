@@ -59,3 +59,46 @@ export const EXPERIENCE = [
     end: '2025',
   },
 ]
+
+// Projects
+export const PROJECTS_DATA = [
+  {
+    id: 'project-1',
+    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
+    githubUrl: 'https://github.com/3rfan/project-1',
+    liveUrl: 'https://project-demo.com',
+    images: [
+      '/projects/project-1-screenshot-1.png',
+      '/projects/project-1-screenshot-2.png'
+    ],
+    featured: true,
+    startDate: '2024',
+    endDate: '2025'
+  },
+  {
+    id: 'project-2',
+    technologies: ['Python', 'Django', 'PostgreSQL', 'Docker'],
+    githubUrl: 'https://github.com/3rfan/project-2',
+    liveUrl: '',
+    images: [
+      '/projects/project-2-screenshot-1.png',
+      '/projects/project-2-screenshot-2.png'
+    ],
+    featured: true,
+    startDate: '2023',
+    endDate: '2024'
+  },
+  {
+    id: 'project-3',
+    technologies: ['Java', 'Spring', 'MySQL'],
+    githubUrl: 'https://github.com/3rfan/project-3',
+    liveUrl: '',
+    images: [
+      '/projects/project-3-screenshot-1.png',
+      '/projects/project-3-screenshot-2.png'
+    ],
+    featured: false,
+    startDate: '2023',
+    endDate: 'Present'
+  },
+]
