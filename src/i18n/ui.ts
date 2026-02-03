@@ -124,6 +124,24 @@ export const ui = {
       'Administered and maintained Azure environments, Microsoft 365 tenants, and broader IT infrastructure',
     'experience.bictgroep2.tasks.2':
       'Installed, configured, and managed hardware such as laptops, tablets, desktops, and mobile devices',
+
+    // Projects
+    'projects.project-1.name': 'Fantasy Footbal Recommendation tool',
+    'projects.project-1.description': 'A fully local Fantasy Premier League (FPL) data analytics and ML-powered recommendation engine that helps users decide the best transfer to make for the next gameweek.',
+    'projects.project-1.shortDescription': 'Fantasy Premier League ML Recommendation Engine',
+
+    'projects.project-2.name': 'FoodPal Recipe Management App',
+    'projects.project-2.description': 'A Spring Boot application for managing recipes and nutritional value intake, featuring search/export, live websocket synchronization, and detailed nutritional analysis',
+    'projects.project-2.shortDescription': 'Cooking recipe management system',
+
+    'projects.project-3.name': 'Database Insights Tool',
+    'projects.project-3.description': 'A desktop application designed for efficient viewing, searching, and exporting of IT support ticket data from Kayako\'s ticketing database',
+    'projects.project-3.shortDescription': 'Database viewer application',
+
+    'projects.project-4.name': 'NetNote Note Taking App',
+    'projects.project-4.description': 'A desktop application designed for creating, editing, organizing, and synchronizing notes, and related files with a backend server, including localization and settings management',
+    'projects.project-4.shortDescription': 'Study note-taking application',
+
   },
   nl: {
     // Navigation
@@ -229,6 +247,19 @@ export const ui = {
       'Beheer en onderhoud van Azure-omgevingen, Microsoft 365 tenants en bredere IT-infrastructuur',
     'experience.bictgroep2.tasks.2':
       'Installatie, configuratie en beheer van hardware zoals laptops, tablets, desktops en mobiele apparaten',
+
+    // Projects
+    'projects.project-1.name': 'E-Commerce Platform',
+    'projects.project-1.description': 'Een full-stack e-commerce platform met gebruikersauthenticatie, productcatalogus, winkelwagen en betalingsintegratie. Gebouwd met React frontend en Node.js backend met PostgreSQL database.',
+    'projects.project-1.shortDescription': 'Full-stack e-commerce oplossing',
+
+    'projects.project-2.name': 'Data Analytics Dashboard',
+    'projects.project-2.description': 'Een uitgebreid datavisualisatie dashboard voor het analyseren van bedrijfsstatistieken. Functies omvatten real-time data updates, aangepaste grafiekconfiguraties en exportmogelijkheden. Gebouwd met Python Django backend en PostgreSQL database.',
+    'projects.project-2.shortDescription': 'Business analytics tool',
+
+    'projects.project-3.name': 'Taakbeheer Systeem',
+    'projects.project-3.description': 'Een collaboratieve taakbeheer applicatie met team workspaces, prioriteit tracking en deadline notificaties. Geïmplementeerd met Java Spring framework en MySQL database.',
+    'projects.project-3.shortDescription': 'Team samenwerkingstool',
 
   },
 } as const
