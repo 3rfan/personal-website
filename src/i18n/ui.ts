@@ -249,17 +249,21 @@ export const ui = {
       'Installatie, configuratie en beheer van hardware zoals laptops, tablets, desktops en mobiele apparaten',
 
     // Projects
-    'projects.project-1.name': 'E-Commerce Platform',
-    'projects.project-1.description': 'Een full-stack e-commerce platform met gebruikersauthenticatie, productcatalogus, winkelwagen en betalingsintegratie. Gebouwd met React frontend en Node.js backend met PostgreSQL database.',
-    'projects.project-1.shortDescription': 'Full-stack e-commerce oplossing',
+    'projects.project-1.name': 'Fantasy Footbal Recommendation tool',
+    'projects.project-1.description': 'Een volledig lokale data-analyse- en ML-gedreven aanbevelingsengine voor Fantasy Premier League (FPL) die gebruikers helpt de beste transfer te kiezen voor de volgende speelronde.',
+    'projects.project-1.shortDescription': 'ML-aanbevelingssysteem voor Fantasy Premier League',
 
-    'projects.project-2.name': 'Data Analytics Dashboard',
-    'projects.project-2.description': 'Een uitgebreid datavisualisatie dashboard voor het analyseren van bedrijfsstatistieken. Functies omvatten real-time data updates, aangepaste grafiekconfiguraties en exportmogelijkheden. Gebouwd met Python Django backend en PostgreSQL database.',
-    'projects.project-2.shortDescription': 'Business analytics tool',
+    'projects.project-2.name': 'FoodPal Recept app',
+    'projects.project-2.description': 'Een Spring Boot-applicatie voor het beheren van recepten en het bijhouden van voedingsinname, met zoeken/exporteren, live websocketsynchronisatie en gedetailleerde voedingsanalyse.',
+    'projects.project-2.shortDescription': 'Applicatie voor kook-recepten beheer',
 
-    'projects.project-3.name': 'Taakbeheer Systeem',
-    'projects.project-3.description': 'Een collaboratieve taakbeheer applicatie met team workspaces, prioriteit tracking en deadline notificaties. Geïmplementeerd met Java Spring framework en MySQL database.',
-    'projects.project-3.shortDescription': 'Team samenwerkingstool',
+    'projects.project-3.name': 'Database Insights Tool',
+    'projects.project-3.description': 'Een desktopapplicatie om IT-supporttickets uit Kayako’s ticketdatabase efficiënt te bekijken, doorzoeken en exporteren.',
+    'projects.project-3.shortDescription': 'Intern Database inzage applicatie',
+
+    'projects.project-4.name': 'NetNote Notitie-app',
+    'projects.project-4.description': 'Een desktopapplicatie voor het maken, bewerken, ordenen en synchroniseren van notities en bijbehorende bestanden met een backendserver, inclusief lokalisatie en instellingenbeheer.',
+    'projects.project-4.shortDescription': 'Notitie-app voor studie',
 
   },
 } as const
