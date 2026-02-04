@@ -77,8 +77,8 @@ export const ui = {
     'techstack.title': 'Tech Stack',
     // Portfolio Page
     'portfolio.title': 'Portfolio',
-    'portfolio.description': "Projects and some clone's that I did",
-    'portfolio.heading': "Projects and clone's",
+    'portfolio.description': "Here you'll find my previous and current projects",
+    'portfolio.heading': "Projects",
 
     // Work Page
     'work.title': 'Work',
@@ -126,21 +126,21 @@ export const ui = {
       'Installed, configured, and managed hardware such as laptops, tablets, desktops, and mobile devices',
 
     // Projects
-    'projects.project-1.name': 'Fantasy Footbal Recommendation tool',
-    'projects.project-1.description': 'A fully local Fantasy Premier League (FPL) data analytics and ML-powered recommendation engine that helps users decide the best transfer to make for the next gameweek.',
-    'projects.project-1.shortDescription': 'Fantasy Premier League ML Recommendation Engine',
+    'projects.project-4.name': 'Fantasy Footbal Recommendation tool',
+    'projects.project-4.description': 'A fully local Fantasy Premier League (FPL) data analytics and ML-powered recommendation engine that helps users decide the best transfer to make for the next gameweek.',
+    'projects.project-4.shortDescription': 'Fantasy Premier League ML Recommendation Engine',
 
-    'projects.project-2.name': 'FoodPal Recipe Management App',
-    'projects.project-2.description': 'A Spring Boot application for managing recipes and nutritional value intake, featuring search/export, live websocket synchronization, and detailed nutritional analysis',
-    'projects.project-2.shortDescription': 'Cooking recipe management system',
+    'projects.project-3.name': 'FoodPal Recipe Management App',
+    'projects.project-3.description': 'A Spring Boot application for managing recipes and nutritional value intake, featuring search/export, live websocket synchronization, and detailed nutritional analysis',
+    'projects.project-3.shortDescription': 'Cooking recipe management system',
 
-    'projects.project-3.name': 'Database Insights Tool',
-    'projects.project-3.description': 'A desktop application designed for efficient viewing, searching, and exporting of IT support ticket data from Kayako\'s ticketing database',
-    'projects.project-3.shortDescription': 'Database viewer application',
+    'projects.project-2.name': 'Database Insights Tool',
+    'projects.project-2.description': 'A desktop application designed for efficient viewing, searching, and exporting of IT support ticket data from Kayako\'s ticketing database',
+    'projects.project-2.shortDescription': 'Database viewer application',
 
-    'projects.project-4.name': 'NetNote Note Taking App',
-    'projects.project-4.description': 'A desktop application designed for creating, editing, organizing, and synchronizing notes, and related files with a backend server, including localization and settings management',
-    'projects.project-4.shortDescription': 'Study note-taking application',
+    'projects.project-1.name': 'NetNote Note Taking App',
+    'projects.project-1.description': 'A desktop application designed for creating, editing, organizing, and synchronizing notes, and related files with a backend server, including localization and settings management',
+    'projects.project-1.shortDescription': 'Study note-taking application',
 
   },
   nl: {
@@ -200,7 +200,7 @@ export const ui = {
 
     // Portfolio Page
     'portfolio.title': 'Portfolio',
-    'portfolio.description': 'Projecten die ik heb gemaakt',
+    'portfolio.description': 'Hier vind je mijn projecten',
     'portfolio.heading': 'Projecten',
 
     // Work Page
@@ -249,21 +249,21 @@ export const ui = {
       'Installatie, configuratie en beheer van hardware zoals laptops, tablets, desktops en mobiele apparaten',
 
     // Projects
-    'projects.project-1.name': 'Fantasy Footbal Recommendation tool',
-    'projects.project-1.description': 'Een volledig lokale data-analyse- en ML-gedreven aanbevelingsengine voor Fantasy Premier League (FPL) die gebruikers helpt de beste transfer te kiezen voor de volgende speelronde.',
-    'projects.project-1.shortDescription': 'ML-aanbevelingssysteem voor Fantasy Premier League',
+    'projects.project-4.name': 'Fantasy Footbal Recommendation tool',
+    'projects.project-4.description': 'Een volledig lokale data-analyse- en ML-gedreven aanbevelingsengine voor Fantasy Premier League (FPL) die gebruikers helpt de beste transfer te kiezen voor de volgende speelronde.',
+    'projects.project-4.shortDescription': 'ML-aanbevelingssysteem voor Fantasy Premier League',
 
-    'projects.project-2.name': 'FoodPal Recept app',
-    'projects.project-2.description': 'Een Spring Boot-applicatie voor het beheren van recepten en het bijhouden van voedingsinname, met zoeken/exporteren, live websocketsynchronisatie en gedetailleerde voedingsanalyse.',
-    'projects.project-2.shortDescription': 'Applicatie voor kook-recepten beheer',
+    'projects.project-3.name': 'FoodPal Recept app',
+    'projects.project-3.description': 'Een Spring Boot-applicatie voor het beheren van recepten en het bijhouden van voedingsinname, met zoeken/exporteren, live websocketsynchronisatie en gedetailleerde voedingsanalyse.',
+    'projects.project-3.shortDescription': 'Applicatie voor kook-recepten beheer',
 
-    'projects.project-3.name': 'Database Insights Tool',
-    'projects.project-3.description': 'Een desktopapplicatie om IT-supporttickets uit Kayako’s ticketdatabase efficiënt te bekijken, doorzoeken en exporteren.',
-    'projects.project-3.shortDescription': 'Intern Database inzage applicatie',
+    'projects.project-2.name': 'Database Insights Tool',
+    'projects.project-2.description': 'Een desktopapplicatie om IT-supporttickets uit Kayako\'s ticketdatabase efficiënt te bekijken, doorzoeken en exporteren.',
+    'projects.project-2.shortDescription': 'Intern Database inzage applicatie',
 
-    'projects.project-4.name': 'NetNote Notitie-app',
-    'projects.project-4.description': 'Een desktopapplicatie voor het maken, bewerken, ordenen en synchroniseren van notities en bijbehorende bestanden met een backendserver, inclusief lokalisatie en instellingenbeheer.',
-    'projects.project-4.shortDescription': 'Notitie-app voor studie',
+    'projects.project-1.name': 'NetNote Notitie-app',
+    'projects.project-1.description': 'Een desktopapplicatie voor het maken, bewerken, ordenen en synchroniseren van notities en bijbehorende bestanden met een backendserver, inclusief lokalisatie en instellingenbeheer.',
+    'projects.project-1.shortDescription': 'Notitie-app voor studie',
 
   },
 } as const

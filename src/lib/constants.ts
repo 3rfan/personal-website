@@ -63,7 +63,7 @@ export const EXPERIENCE = [
 // Projects
 export const PROJECTS_DATA = [
   {
-    id: 'project-1',
+    id: 'project-4',
     technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
     githubUrl: 'https://github.com/3rfan/fpl-ai-recommender',
     liveUrl: '',
@@ -76,7 +76,7 @@ export const PROJECTS_DATA = [
     endDate: 'present'
   },
   {
-    id: 'project-2',
+    id: 'project-3',
     technologies: ['Java', 'Spring Boot', 'PostgreSQL'],
     githubUrl: '',
     liveUrl: '',
@@ -89,7 +89,7 @@ export const PROJECTS_DATA = [
     endDate: '2026'
   },
   {
-    id: 'project-3',
+    id: 'project-2',
     technologies: ['Java', 'Spring Boot', 'PostgreSQL'],
     githubUrl: '',
     liveUrl: '',
@@ -102,7 +102,7 @@ export const PROJECTS_DATA = [
     endDate: '2025'
   },
   {
-    id: 'project-4',
+    id: 'project-1',
     technologies: ['Java', 'Spring Boot', 'PostgreSQL'],
     githubUrl: '',
     liveUrl: '',
