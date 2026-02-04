@@ -16,14 +16,17 @@ import {
   useTranslations,
   useTranslatedPath,
   getRouteFromUrl,
+  useTranslatedProjects,
 } from '../i18n/utils'
 import { languages } from '../i18n/ui'
 import FooterCard from '../components/sections/FooterCard.astro'
+import { PROJECTS_DATA } from '../lib/constants'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 const translatePath = useTranslatedPath(lang)
 const route = getRouteFromUrl(Astro.url) || ''
+const getProject = useTranslatedProjects(lang)
 
 // Generate paths for all languages
 const languagePaths: Record<string, string> = {}
@@ -112,7 +115,19 @@ const navigationLabels = {
       rowSpan="md:row-span-1 lg:row-span-2"
       title={t('home.portfolio')}
       href={translatePath('/portfolio')}
-    />
+    >
+      <div class="mt-4 space-y-3">
+        {PROJECTS_DATA.map((project) => {
+          const translatedProject = getProject(project.id)
+          return (
+            <div class="flex items-center gap-2 group">
+              <span class="text-primary transition-transform group-hover:translate-x-1">→</span>
+              <span class="text-sm font-medium transition-colors group-hover:text-primary">{translatedProject.name}</span>
+            </div>
+          )
+        })}
+      </div>
+    </Card>
     <AboutMe />
     <!-- <ContactsCard /> -->
     <HobbiesCard />
