@@ -31,7 +31,7 @@ export function ImageLightbox({ images, projectName }: ImageLightboxProps) {
           <div
             key={index}
             className="overflow-hidden rounded-lg border bg-muted cursor-pointer"
-            onDoubleClick={() => handleImageDoubleClick(img)}
+            onClick={() => handleImageDoubleClick(img)}
           >
             <img
               src={img}
