@@ -126,6 +126,10 @@ export const ui = {
       'Installed, configured, and managed hardware such as laptops, tablets, desktops, and mobile devices',
 
     // Projects
+    'projects.project-5.name': 'Personal Portfolio Website',
+    'projects.project-5.description': 'You are on it right now! A modern, responsive portfolio website built with Astro and React, featuring bilingual support (English/Dutch), project showcases, work experience timeline and interactive components. Designed with a focus on performance, accessibility, and clean UI using Tailwind CSS and Shadcn components.',
+    'projects.project-5.shortDescription': 'Modern portfolio website with interactive components',
+
     'projects.project-4.name': 'Fantasy Footbal Recommendation tool',
     'projects.project-4.description': 'A fully local Fantasy Premier League (FPL) data analytics and ML-powered recommendation engine that helps users decide the best transfer to make for the next gameweek.',
     'projects.project-4.shortDescription': 'Fantasy Premier League ML Recommendation Engine',
@@ -249,6 +253,10 @@ export const ui = {
       'Installatie, configuratie en beheer van hardware zoals laptops, tablets, desktops en mobiele apparaten',
 
     // Projects
+    'projects.project-5.name': 'Persoonlijke Portfolio Website',
+    'projects.project-5.description': 'Je bezoekt het momenteel! Een moderne, responsieve portfolio website gebouwd met Astro en React, met tweetalige ondersteuning (Engels/Nederlands), project showcases, werkervaring tijdlijn, en interactieve onderdelen. Ontworpen met focus op prestaties, toegankelijkheid en een strak UI met Tailwind CSS en Shadcn componenten.',
+    'projects.project-5.shortDescription': 'Moderne portfolio website met responsieve elementen',
+
     'projects.project-4.name': 'Fantasy Footbal Recommendation tool',
     'projects.project-4.description': 'Een volledig lokale data-analyse- en ML-gedreven aanbevelingsengine voor Fantasy Premier League (FPL) die gebruikers helpt de beste transfer te kiezen voor de volgende speelronde.',
     'projects.project-4.shortDescription': 'ML-aanbevelingssysteem voor Fantasy Premier League',

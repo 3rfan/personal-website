@@ -63,6 +63,16 @@ export const EXPERIENCE = [
 // Projects
 export const PROJECTS_DATA = [
   {
+    id: 'project-5',
+    technologies: ['Astro', 'React', 'TypeScript', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/3rfan/personal-website',
+    liveUrl: '',
+    images: [],
+    featured: true,
+    startDate: '2026',
+    endDate: '2026'
+  },
+  {
     id: 'project-4',
     technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
     githubUrl: 'https://github.com/3rfan/fpl-ai-recommender',
