@@ -43,7 +43,7 @@ export function useTranslatedExperience(lang: keyof typeof ui) {
       'bookii',
     ] as const
 
-    if (!experienceKeys.includes(expId as any)) {
+    if (!experienceKeys.includes(expId as typeof experienceKeys[number])) {
       return null
     }
 
@@ -130,9 +130,9 @@ export function useTranslatedProjects(lang: keyof typeof ui) {
     const t = useTranslations(lang)
     
     return {
-      name: t(`projects.${projectId}.name` as any),
-      description: t(`projects.${projectId}.description` as any),
-      shortDescription: t(`projects.${projectId}.shortDescription` as any),
+      name: t(`projects.${projectId}.name` as keyof (typeof ui)[typeof defaultLang]),
+      description: t(`projects.${projectId}.description` as keyof (typeof ui)[typeof defaultLang]),
+      shortDescription: t(`projects.${projectId}.shortDescription` as keyof (typeof ui)[typeof defaultLang]),
     }
   }
 }

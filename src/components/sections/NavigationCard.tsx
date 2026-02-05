@@ -32,7 +32,7 @@ interface NavigationCardProps {
 
 export function NavigationCard({
   currentLang,
-  currentRoute,
+  currentRoute: _currentRoute,
   languagePaths,
   translations,
   labels,

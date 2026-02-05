@@ -18,7 +18,7 @@ interface LanguagePickerProps {
 
 export function LanguagePicker({
   currentLang,
-  currentRoute,
+  currentRoute: _currentRoute,
   languagePaths,
 }: LanguagePickerProps) {
   const handleLanguageChange = (newLang: string) => {
