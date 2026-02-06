@@ -401,6 +401,9 @@ export function NavigationCard({
           </Button>
         </div>
 
+        {/* Divider */}
+        <div className="h-12 w-px bg-border self-center shrink-0 mx-1 mb-2px" aria-hidden="true" />
+
         {/* Sticky Theme & Language Controls */}
         <div className="flex gap-2 shrink-0">
           <DropdownMenu>
