@@ -68,6 +68,7 @@ export const ui = {
 
     // Hobbies Card
     'hobbies.title': 'Hobbies',
+    'hobbies.description': 'I enjoy many different kind of activities but the main ones currently are:',
     'hobbies.football': 'Football',
     'hobbies.reading': 'Reading',
     'hobbies.gaming': 'Gaming',
@@ -193,6 +194,7 @@ export const ui = {
 
     // Hobbies Card
     'hobbies.title': 'Hobby\'s',
+    'hobbies.description': 'Ik geniet van veel verschillende activiteiten, maar de belangrijkste zijn momenteel:',
     'hobbies.football': 'Voetbal',
     'hobbies.reading': 'Lezen',
     'hobbies.gaming': 'Gamen',
