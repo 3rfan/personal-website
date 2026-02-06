@@ -328,7 +328,11 @@ export function NavigationCard({
             onClick={() => scrollToSection('contacts')}
             aria-label={translations.contacts}
           >
-            <Mail className="h-4 w-4 transition-colors group-hover/item:text-primary" />
+            <Mail className={`h-4 w-4 transition-colors ${
+              activeSection === 'contacts' 
+                ? 'text-primary-foreground' 
+                : 'group-hover/item:text-primary'
+            }`} />
           </Button>
           <Button
             variant={activeSection === 'about' ? 'default' : 'outline'}
@@ -337,7 +341,11 @@ export function NavigationCard({
             onClick={() => scrollToSection('about')}
             aria-label={translations.about}
           >
-            <User className="h-4 w-4 transition-colors group-hover/item:text-primary" />
+            <User className={`h-4 w-4 transition-colors ${
+              activeSection === 'about' 
+                ? 'text-primary-foreground' 
+                : 'group-hover/item:text-primary'
+            }`} />
           </Button>
           <Button
             variant={activeSection === 'education' ? 'default' : 'outline'}
@@ -346,7 +354,11 @@ export function NavigationCard({
             onClick={() => scrollToSection('education')}
             aria-label={translations.education}
           >
-            <GraduationCap className="h-4 w-4 transition-colors group-hover/item:text-primary" />
+            <GraduationCap className={`h-4 w-4 transition-colors ${
+              activeSection === 'education' 
+                ? 'text-primary-foreground' 
+                : 'group-hover/item:text-primary'
+            }`} />
           </Button>
           <Button
             variant={activeSection === 'experience' ? 'default' : 'outline'}
@@ -355,7 +367,11 @@ export function NavigationCard({
             onClick={() => scrollToSection('experience')}
             aria-label={translations.experience}
           >
-            <Briefcase className="h-4 w-4 transition-colors group-hover/item:text-primary" />
+            <Briefcase className={`h-4 w-4 transition-colors ${
+              activeSection === 'experience' 
+                ? 'text-primary-foreground' 
+                : 'group-hover/item:text-primary'
+            }`} />
           </Button>
           <Button
             variant={activeSection === 'portfolio' ? 'default' : 'outline'}
@@ -364,7 +380,11 @@ export function NavigationCard({
             onClick={() => scrollToSection('portfolio')}
             aria-label={translations.portfolio}
           >
-            <FolderKanban className="h-4 w-4 transition-colors group-hover/item:text-primary" />
+            <FolderKanban className={`h-4 w-4 transition-colors ${
+              activeSection === 'portfolio' 
+                ? 'text-primary-foreground' 
+                : 'group-hover/item:text-primary'
+            }`} />
           </Button>
           <Button
             variant={activeSection === 'techstack' ? 'default' : 'outline'}
@@ -373,7 +393,11 @@ export function NavigationCard({
             onClick={() => scrollToSection('techstack')}
             aria-label={translations.techstack}
           >
-            <Code2 className="h-4 w-4 transition-colors group-hover/item:text-primary" />
+            <Code2 className={`h-4 w-4 transition-colors ${
+              activeSection === 'techstack' 
+                ? 'text-primary-foreground' 
+                : 'group-hover/item:text-primary'
+            }`} />
           </Button>
         </div>
 
