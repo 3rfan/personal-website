@@ -206,7 +206,7 @@ export const ui = {
 
     // Tech Stack Card
     'techstack.title': 'Tech Stack',
-    'techstack.description': 'Dit is mijn huidige ontwikkelvaardigheden',
+    'techstack.description': 'Deze tools gebruik ik momenteel voor development',
 
     // Portfolio Page
     'portfolio.title': 'Portfolio',
