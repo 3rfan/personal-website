@@ -63,7 +63,8 @@ export const ui = {
     // Education Card
     'education.title': 'Education',
     'education.institution': 'Delft University of Technology',
-    'education.degree': 'Computer Science and Engineering',
+    'education.degree': 'BSc Computer Science and Engineering',
+    'education.specialization': 'AI and Data Specialisation',
 
     // Hobbies Card
     'hobbies.title': 'Hobbies',
@@ -75,6 +76,7 @@ export const ui = {
     'hobbies.languages': 'Learning languages',
     // Tech Stack Card
     'techstack.title': 'Tech Stack',
+    'techstack.description': 'This is my current development skillset',
     // Portfolio Page
     'portfolio.title': 'Portfolio',
     'portfolio.description': "Here you'll find my previous and current projects",
@@ -187,8 +189,11 @@ export const ui = {
     'contacts.details': 'Contactgegevens',
     'contacts.socials': 'Socials',
 
-    // Study Card
-    'study.title': 'Studie',
+    // Education Card
+    'education.title': 'Opleiding',
+    'education.institution': 'Technische Universiteit Delft',
+    'education.degree': 'BSc Technische Informatica',
+    'education.specialization': 'AI en Data Specialisatie',
 
     // Hobbies Card
     'hobbies.title': 'Hobby\'s',
@@ -201,6 +206,7 @@ export const ui = {
 
     // Tech Stack Card
     'techstack.title': 'Tech Stack',
+    'techstack.description': 'Dit is mijn huidige ontwikkelvaardigheden',
 
     // Portfolio Page
     'portfolio.title': 'Portfolio',
