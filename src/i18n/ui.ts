@@ -45,8 +45,7 @@ export const ui = {
     'about.description1':
       "I have always been drawn to the kind of technology that felt ahead of its time, the futuristic ideas you would see in Back to the Future, Star Wars, or the Marvel movies. <br></br> What started as curiosity became my passion: I didn’t just want to use technology, I wanted to understand it, build it, and share it with the world. That drive has stayed with me ever since, and today I’m studying Computer Science and Engineering at Delft University of Technology, specializing in Artificial Intelligence, Data Science, and Machine Learning.",
     'about.description2':
-      "I’m in particular interested in intelligent systems that can learn, reason, and improve human life and I’m determined to contribute to that future through strong engineering, creative problem-solving, and a hunger for learning.",
-
+      "I like building the full bridge from idea to impact, so understanding the problem, designing the solution, and engineering it into something reliable, usable, and scalable. <br></br> I’m particularly interested in intelligent systems that reason, learn and improve autonomously. In the foreseeable future, these systems should be human-centered. they should remove workload, support better decisions, and give people more time and energy for what matters most. I’m determined to contribute to this vision of the future through strong engineering, creative problem-solving, and a hunger for learning.",
     // Now Card
     'now.title': 'Now',
     'now.whatsThat': "what's that ?",
@@ -173,8 +172,7 @@ export const ui = {
     'about.description1':
       "Ik heb me altijd aangetrokken gevoeld tot technologie die zijn tijd ver vooruit was, de futuristische ideeën die je ziet in Back to the Future, Star Wars of de Marvel-films. <br></br> Wat begon als nieuwsgierigheid, werd mijn passie: ik wilde technologie niet alleen gebruiken, ik wilde het begrijpen, bouwen en delen met de wereld. Die drive is me altijd bijgebleven en vandaag studeer ik Technische Informatica en Engineering aan de Technische Universiteit Delft, met als specialisatie Kunstmatige Intelligentie, Data Science en Machine Learning.",
     'about.description2':
-      "Ik ben vooral geïnteresseerd in intelligente systemen die kunnen leren, redeneren en het menselijk leven kunnen verbeteren, en ik ben vastbesloten om bij te dragen aan die toekomst door middel van sterke techniek, creatieve probleemoplossing en een honger naar kennis.",    
-    
+      "Ik vind het leuk om ideeën om te zetten in echte impact: het probleem begrijpen, een oplossing ontwerpen en die bouwen tot iets dat betrouwbaar, gebruiksvriendelijk en schaalbaar is. <br></br> Ik ben vooral geïnteresseerd in intelligente systemen die zelfstandig kunnen leren en redeneren. In de nabije toekomst moeten deze systemen volledig mensgericht zijn: ze moeten de werkdruk verlagen, betere besluitvorming ondersteunen en mensen meer tijd en energie geven voor wat écht belangrijk is. Ik ben vastbesloten om aan deze toekomstvisie bij te dragen via sterke engineering, creatieve probleemoplossing en een honger om te blijven leren.",
       // Now Card
     'now.title': 'Nu',
     'now.whatsThat': "wat is dat?",
