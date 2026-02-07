@@ -1,6 +1,7 @@
 ---
 import Card from '../common/Card.astro'
 import { Button } from '../ui/button'
+import { SquareArrowOutUpRight } from 'lucide-react'
 import { EXPERIENCE } from '../../lib/constants'
 import {
   getLangFromUrl,
@@ -20,6 +21,12 @@ const getExperience = useTranslatedExperience(lang)
   rowSpan="md:row-span-1 lg:row-span-2"
   title={t('experience.title')}
 >
+  <a href={translatePath('/work')} class="absolute right-4 top-4 z-10">
+    <SquareArrowOutUpRight
+      className="transition-colors hover:text-primary"
+      size={16}
+    />
+  </a>
   <div class="mt-2 space-y-4">
     {
       EXPERIENCE.slice(0, 1).map((exp) => {
