@@ -15,10 +15,10 @@ export const LINKS = {
 
 // Global
 export const SITE: Site = {
-  TITLE: 'Astro Sphere',
+  TITLE: 'Erfan Hosseini - Computer Science Engineer | AI & ML Specialist',
   DESCRIPTION:
-    'Welcome to Astro Sphere, a portfolio and blog for designers and developers.',
-  AUTHOR: 'Mark Horn',
+    'Erfan Hosseini - Computer Science and Engineering student at Delft University of Technology, specializing in Artificial Intelligence, Machine Learning, and Data Science. IT Engineer passionate about building intelligent systems.',
+  AUTHOR: 'Erfan Hosseini',
 }
 
 // Work Page

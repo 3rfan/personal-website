@@ -1,6 +1,8 @@
 ---
 import '@/styles/globals.css'
 import '@/styles/fonts.css'
+import { LINKS } from '../../lib/constants'
+import { getLangFromUrl } from '../../i18n/utils'
 
 interface Props {
   title?: string | undefined
@@ -9,12 +11,58 @@ interface Props {
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const lang = getLangFromUrl(Astro.url)
 
 if (Astro.props.ogImage === undefined) {
   Astro.props.ogImage = new URL('View1.png', canonicalURL)
 }
 
 const { title, description, ogImage } = Astro.props
+
+// Generate alternate language URLs
+const alternateURL = new URL(Astro.url.pathname, Astro.site)
+if (lang === 'nl') {
+  alternateURL.pathname = Astro.url.pathname.replace('/nl', '')
+} else {
+  alternateURL.pathname = `/nl${Astro.url.pathname}`
+}
+
+// Structured Data for Person/Professional
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Erfan Hosseini",
+  "jobTitle": "IT Engineer & Computer Science Student",
+  "description": "Computer Science and Engineering student specializing in AI, Machine Learning, and Data Science",
+  "url": Astro.site?.toString(),
+  "sameAs": [
+    LINKS.linkedin,
+    LINKS.github,
+    LINKS.instagram
+  ],
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Delft University of Technology",
+    "url": "https://www.tudelft.nl/en/"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "BICT Groep",
+    "url": "https://www.bictgroep.nl/"
+  },
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Data Science",
+    "Java",
+    "Python",
+    "TypeScript",
+    "React",
+    "Azure",
+    "Full-Stack Development",
+    "Software Engineering"
+  ]
+}
 ---
 
 <meta charset="utf-8" />
@@ -26,12 +74,34 @@ const { title, description, ogImage } = Astro.props
 <link rel="icon" type="image/svg+xml" href="/ui/icon.svg" />
 <link rel="apple-touch-icon" href="/ui/icon.svg" />
 <meta name="theme-color" content="#000000" />
+
+<!-- SEO Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<meta name="keywords" content="Erfan Hosseini, Computer Science, Software Engineer, IT Engineer, Delft University of Technology, TU Delft, Artificial Intelligence, Machine Learning, Data Science, AI Specialist, Full-Stack Developer, Java, Python, TypeScript, React, Azure, Netherlands, Naaldwijk" />
+<meta name="author" content="Erfan Hosseini" />
 
+<!-- Geographic Meta Tags -->
+<meta name="geo.region" content="NL-ZH" />
+
+<!-- Language Alternates -->
+<link rel="alternate" hreflang={lang === 'nl' ? 'en' : 'nl'} href={alternateURL} />
+<link rel="alternate" hreflang="x-default" href={lang === 'nl' ? alternateURL : canonicalURL} />
+
+<!-- Social Verification -->
+<link rel="me" href={LINKS.linkedin} />
+<link rel="me" href={LINKS.github} />
+
+<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
+<meta property="og:locale" content={lang === 'nl' ? 'nl_NL' : 'en_US'} />
+<meta property="og:locale:alternate" content={lang === 'nl' ? 'en_US' : 'nl_NL'} />
+<meta property="og:site_name" content="Erfan Hosseini Portfolio" />
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
