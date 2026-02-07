@@ -6,8 +6,7 @@ A minimal, responsive and modern personal portfolio website, tailored for Engine
 
 ## Design
 
-![View 1](public/View1.png)
-![View 2](public/View2.png)
+![View 1](public/Readme-view.png)
 
 ## Technologies Used
 
