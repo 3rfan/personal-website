@@ -78,8 +78,6 @@ export const PROJECTS_DATA = [
     githubUrl: 'https://github.com/3rfan/fpl-ai-recommender',
     liveUrl: '',
     images: [
-      '/projects/project-1-screenshot-1.png',
-      '/projects/project-1-screenshot-2.png'
     ],
     featured: true,
     startDate: '2025',
