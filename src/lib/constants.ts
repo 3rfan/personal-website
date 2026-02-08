@@ -74,7 +74,7 @@ export const PROJECTS_DATA = [
   },
   {
     id: 'project-4',
-    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
+    technologies: ['Python', 'Java', 'Spring Boot', 'PostgreSQL', 'React', 'TypeScript', 'Node.js'],
     githubUrl: 'https://github.com/3rfan/fpl-ai-recommender',
     liveUrl: '',
     images: [
