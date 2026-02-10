@@ -94,9 +94,9 @@ const navigationLabels = {
   >
   </div>
   <main
-    class="relative m-auto grid w-full max-w-5xl gap-3 overflow-visible p-4 sm:gap-3 sm:p-4 md:grid-cols-4 md:gap-4 md:p-6 lg:grid-cols-5 lg:auto-rows-min lg:gap-4"
+    class="relative m-auto grid w-full max-w-5xl gap-3 overflow-visible p-4 sm:gap-3 sm:p-4 md:grid-cols-12 md:gap-4 md:p-6 lg:grid-cols-5 lg:auto-rows-min lg:gap-4"
   >
-    <Card colSpan="md:col-span-1" rowSpan="lg:row-span-2">
+    <Card colSpan="md:col-span-3 lg:col-span-1" rowSpan="lg:row-span-2">
       <NavigationCard
         currentLang={lang}
         currentRoute={route}
@@ -111,7 +111,7 @@ const navigationLabels = {
     <EducationCard />
     <ExperienceCard />
     <Card
-      colSpan="md:col-span-1 lg:col-span-1"
+      colSpan="md:col-span-4 lg:col-span-1"
       rowSpan="md:row-span-1 lg:row-span-2"
       title={t('home.portfolio')}
       href={translatePath('/portfolio')}
