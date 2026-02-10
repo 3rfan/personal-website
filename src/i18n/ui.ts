@@ -83,8 +83,8 @@ export const ui = {
     'portfolio.heading': "Projects",
 
     // Work Page
-    'work.title': 'Work',
-    'work.description': 'Places I have worked.',
+    'work.title': 'Work experience',
+    'work.description': 'Fantastic companies I have worked for',
 
     // 404 Page
     '404.title': '404 - Not Found',
@@ -214,8 +214,8 @@ export const ui = {
     'portfolio.heading': 'Projecten',
 
     // Work Page
-    'work.title': 'Werk',
-    'work.description': 'Plaatsen waar ik heb gewerkt.',
+    'work.title': 'Werkervaring',
+    'work.description': 'Fantastiche bedrijven waarvoor ik heb gewerkt',
 
     // 404 Page
     '404.title': '404 - Niet gevonden',
