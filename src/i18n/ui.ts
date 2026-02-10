@@ -34,7 +34,7 @@ export const ui = {
     // Intro Card
     'intro.welcome': 'Welcome!',
     'intro.title':
-      "Hi there, I am <b>Erfan Hosseini</b>, a Computer Science and Engineering student and Software Engineer. Passionate about Machine Learning, Data Science and Cyber Security",
+      "Hi there, I am <b>Erfan Hosseini</b>, a Computer Science and Engineering student. Passionate about Machine Learning, Data Science and Cyber Security",
     'intro.sr.github': 'GitHub Profile',
     'intro.sr.linkedin': 'Linkedin Profile',
     'intro.sr.email': 'Email contact',
@@ -163,7 +163,7 @@ export const ui = {
     // Intro Card
     'intro.welcome': 'Welkom!',
     'intro.title':
-      "Hallo, ik ben <b>Erfan Hosseini</b>, student Computer Science and Engineering en Software Engineer. Gepassioneerd over Machine Learning, Data Science en Cyber Security",
+      "Hallo, ik ben <b>Erfan Hosseini</b>, student Computer Science and Engineering. Gepassioneerd over Machine Learning, Data Science en Cyber Security",
     'intro.sr.github': 'GitHub Profiel',
     'intro.sr.linkedin': 'LinkedIn Profiel',
     'intro.sr.email': 'E-mail contact',
@@ -210,12 +210,12 @@ export const ui = {
 
     // Portfolio Page
     'portfolio.title': 'Portfolio',
-    'portfolio.description': 'Hier vind je mijn projecten',
+    'portfolio.description': 'Hier vind je mijn persoonlijke projecten',
     'portfolio.heading': 'Projecten',
 
     // Work Page
     'work.title': 'Werkervaring',
-    'work.description': 'Fantastiche bedrijven waarvoor ik heb gewerkt',
+    'work.description': 'Fantastiche bedrijven waarvoor ik gewerkt heb',
 
     // 404 Page
     '404.title': '404 - Niet gevonden',

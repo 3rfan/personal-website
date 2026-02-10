@@ -21,18 +21,23 @@ const translatePath = useTranslatedPath(lang)
 <BaseLayout title={t('work.title')} description={t('work.description')}>
   <main class="flex min-h-[80vh] flex-auto flex-col py-12" transition:animate="fade">
     <Container size="md">
-      <div class="mb-8">
+      <div class="absolute top-6 left-4 md:left-8 z-10">
         <a href={translatePath('/')}>
-          <Button variant="ghost" size="sm" className="mb-4">
+          <Button variant="outline" size="sm" className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
             <ArrowLeft className="mr-2 h-4 w-4" />
             {t('nav.home')}
           </Button>
         </a>
+      </div>
+      <div class="mb-8 text-center pt-8 md:pt-0">
         <h2
-          class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0"
+          class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 inline-block"
         >
           {t('work.title')}
         </h2>
+        <p class="mt-4 text-muted-foreground">
+          {t('work.description')}
+        </p>
       </div>
     </Container>
     <div class="py-8">
